@@ -1,0 +1,5 @@
+span(*ngIf="activity.payload.action === 'created'") commented on pull request 
+    i.fa.fa-comment
+span(*ngIf="activity.payload.action === 'edited' || activity.payload.action === 'deleted'") {{activity.payload.action}} comment on pull request 
+    i.fa.fa-comment
+include completion

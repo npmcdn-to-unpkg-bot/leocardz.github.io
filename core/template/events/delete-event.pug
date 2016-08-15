@@ -1,0 +1,5 @@
+span(*ngIf="activity.payload.ref_type === 'branch'") deleted branch {{activity.payload.ref}} 
+    i.fa.fa-code-fork
+span(*ngIf="activity.payload.ref_type === 'tag'") deleted tag {{activity.payload.ref}} 
+    i.fa.fa-tag
+include completion

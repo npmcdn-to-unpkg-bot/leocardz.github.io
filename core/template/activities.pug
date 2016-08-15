@@ -1,0 +1,35 @@
+.activities
+    .col-lg-12.col-md-12.text-center
+        .title Recent Activities
+    .col-lg-12.col-md-12.list.text-center
+        div([hidden]="activities.length > 0")
+            include spinner
+        div(*ngFor="let activity of activities").event
+            div(*ngIf="activity.type === 'CommitCommentEvent'")
+                include events/commit-comment-event
+            div(*ngIf="activity.type === 'CreateEvent'")
+                include events/create-event
+            div(*ngIf="activity.type === 'DeleteEvent'")
+                include events/delete-event
+            div(*ngIf="activity.type === 'ForkEvent'")
+                include events/fork-event
+            div(*ngIf="activity.type === 'IssuesEvent'")
+                include events/issues-event
+            div(*ngIf="activity.type === 'IssueCommentEvent'")
+                include events/issue-comment-event
+            div(*ngIf="activity.type === 'MemberEvent'")
+                include events/member-event
+            div(*ngIf="activity.type === 'MembershipEvent'")
+                include events/membership-event
+            div(*ngIf="activity.type === 'PublicEvent'")
+                include events/public-event
+            div(*ngIf="activity.type === 'PullRequestEvent'")
+                include events/pull-request-event
+            div(*ngIf="activity.type === 'PullRequestReviewCommentEvent'")
+                include events/pull-request-review-comment-event
+            div(*ngIf="activity.type === 'PushEvent'")
+                include events/push-event
+            div(*ngIf="activity.type === 'ReleaseEvent'")
+                include events/release-event
+            div(*ngIf="activity.type === 'WatchEvent'")
+                include events/watch-event

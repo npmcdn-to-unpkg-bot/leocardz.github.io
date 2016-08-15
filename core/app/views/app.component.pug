@@ -1,0 +1,10 @@
+.col-lg-12.col-md-12.col-sm-12.col-xs-12.margin-0.padding-0
+    .left-bar.hidden-sm.hidden-xs.margin-0.padding-0
+        include ../../template/left-bar
+    .main-content
+        include ../../template/search
+        .text-center([hidden]="!isLoading")
+            include ../../template/spinner-orange
+        .dynamic-content
+            router-outlet
+        include ../../template/footer

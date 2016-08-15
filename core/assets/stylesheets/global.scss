@@ -1,0 +1,122 @@
+@import './vars.scss';
+@import './spinner.scss';
+
+* {
+  outline: none !important;
+}
+
+body {
+    margin: 0px;
+}
+
+.left-bar, .top-bar {
+    background: $orange;
+}
+
+.margin-0{
+    margin: 0px !important;
+}
+
+.padding-0 {
+    padding: 0px !important;
+}
+
+.divider {
+    margin: 0px 15px;
+    height: 1px;
+    background: $white;
+}
+
+//-- Left Bar Buttons
+.btn-sample { 
+  color: $white; 
+  background-color: $orange; 
+  border-color: $white;
+  border-radius: 0px;
+  font-weight: 400;
+  font-size: 14px; 
+  -webkit-transition: $transition;
+  transition: $transition;
+} 
+
+.btn-sample.uppercase { 
+  text-transform: uppercase;
+} 
+ 
+.btn-sample:hover, 
+.btn-sample:focus, 
+.btn-sample:active, 
+.btn-sample.active, 
+.btn-sample.selected, 
+.open .dropdown-toggle.btn-sample { 
+  color: $orange; 
+  background-color: $white; 
+  border-color: $orange; 
+} 
+ 
+.btn-sample:active, 
+.btn-sample.active, 
+.open .dropdown-toggle.btn-sample { 
+  background-image: none; 
+} 
+ 
+.btn-sample.disabled, 
+.btn-sample[disabled], 
+fieldset[disabled] .btn-sample, 
+.btn-sample.disabled:hover, 
+.btn-sample[disabled]:hover, 
+fieldset[disabled] .btn-sample:hover, 
+.btn-sample.disabled:focus, 
+.btn-sample[disabled]:focus, 
+fieldset[disabled] .btn-sample:focus, 
+.btn-sample.disabled:active, 
+.btn-sample[disabled]:active, 
+fieldset[disabled] .btn-sample:active, 
+.btn-sample.disabled.active, 
+.btn-sample[disabled].active, 
+fieldset[disabled] .btn-sample.active { 
+  background-color: $orange; 
+  border-color: $white; 
+} 
+ 
+.btn-sample .badge { 
+  color: $orange; 
+  background-color: $white; 
+}
+//-- Left Bar Buttons
+
+.activities .title {
+  color: $white;
+  margin: 20px 10px 10px 10px;
+  font-weight: 900;
+  font-size: 14px; 
+}
+
+.activities .list {
+  color: $white;
+  word-wrap: break-word;
+}
+
+.activities .list a {
+  color: $white;
+  transition: $transition;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.activities .list a:hover {
+  color: $darkGrey;
+}
+
+.activities .event {
+  font-weight: 500;
+  font-size: 12px; 
+  margin-bottom: 18px;
+}
+
+.activities .title {
+  color: $white;
+  margin: 20px 10px 10px 10px;
+  font-weight: 900;
+  font-size: 14px; 
+}

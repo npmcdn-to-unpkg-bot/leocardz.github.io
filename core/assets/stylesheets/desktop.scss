@@ -1,0 +1,143 @@
+@import './global.scss';
+$leftBarSize: 255px;
+$mainContentBarSize: calc(100% - 255px);
+$leftBarImgMaxWidth: 255px;
+$searchInputWidth: 100%;
+
+.left-bar img {
+    margin: 0px auto;
+    max-width: $leftBarImgMaxWidth;
+}
+
+.left-bar-buttons {
+    margin: 6px 30px;
+}
+
+.left-bar-buttons a {
+    margin: 8px 0px;
+    padding: 10px 0px;
+    width: 100%;
+}
+
+.fixed {
+    position: fixed;
+    z-index: 1000;
+    background: $orange;
+    display: block;
+}
+
+.fixed a {
+    display: block;
+}
+
+.left-bar {
+  position: fixed;
+  width: $leftBarSize;
+  height:100vh;
+  left: 0;
+  right: 0;
+  overflow-y: scroll;
+}
+
+.main-content {
+  margin: 0 0 0 $leftBarSize;
+  overflow-y: scroll;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: $mainContentBarSize;
+  height:100vh;
+}
+
+.scrollable-content { 
+  margin-top: 198px;
+}
+
+.search {
+    z-index: 1000;
+    width: $searchInputWidth;
+    display: block;
+    overflow-y: scroll;
+    position: absolute;
+}
+
+.search input[type="text"] {
+  padding: 2px 8px 5px;
+  width: $searchInputWidth;
+  border: none;
+  transition: border 0.3s;
+  font-size: 30px;
+}
+
+.search-input {
+    background: $white;
+    display: block;
+    padding: 4px;
+}
+
+.search-view {
+    padding: 0 25px;
+    background: $white;
+    border-bottom: 2px $orange solid;
+}
+
+.dynamic-content {
+    margin: 80px 25px 20px;
+}
+
+footer .content {
+    background: $footerBackground;
+    border-top: 2px solid $darkGrey;
+}
+
+footer .content .profile img {
+    width: 100%;
+    margin: 16px 0px;
+    border: 1px solid $grey;
+}
+
+footer .content .profile .card h2 {
+    color: $orange;
+    border-bottom: 2px solid $darkGrey;
+    padding-bottom: 7px;
+    font-size: 21px;
+    font-weight: 400;
+}
+
+footer .content .profile .card h4 {
+    color: $orange;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+footer ul {
+    padding: 0;
+    list-style-type: none;
+}
+
+footer ul li {
+    font-size: 14px;
+}
+
+footer h5 {
+    text-transform: uppercase;
+    color: $orange;
+    border-bottom: 2px solid $darkGrey;
+    padding-bottom: 7px;
+}
+
+footer a {
+    color: $orange;
+    text-decoration: none;
+    cursor: pointer;
+    transition: $transition;
+}
+
+footer a:hover {
+    text-decoration: none;
+    color: $darkGrey;
+}
+
+footer .section {
+    padding: 15px 30px;
+}

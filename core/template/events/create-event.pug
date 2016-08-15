@@ -1,0 +1,7 @@
+span(*ngIf="activity.payload.ref_type === 'branch'") created branch {{activity.payload.ref}} 
+    i.fa.fa-code-fork
+span(*ngIf="activity.payload.ref_type === 'tag'") created tag {{activity.payload.ref}} 
+    i.fa.fa-tag
+span(*ngIf="activity.payload.ref_type === 'repository'") created repo 
+    i.fa.fa-code-fork
+include completion

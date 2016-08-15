@@ -1,0 +1,79 @@
+{
+  "name": "leocardz.com",
+  "version": "1.0.0",
+  "description": "leocardz.com",
+  "main": "index.js",
+  "scripts": {
+    "tsc": "tsc",
+    "tsc:w": "tsc -w",
+    "lite": "lite-server",
+    "start": "concurrently \"npm run tsc:w\" \"npm run lite\"",
+    "postinstall": "typings install",
+    "typings": "typings", 
+    "build": "gulp build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LeonardoCardoso/leocardz.com.git"
+  },
+  "dependencies": {
+    "@angular/common": "2.0.0-rc.4",
+    "@angular/compiler": "2.0.0-rc.4",
+    "@angular/core": "2.0.0-rc.4",
+    "@angular/forms": "0.2.0",
+    "@angular/http": "2.0.0-rc.4",
+    "@angular/platform-browser": "2.0.0-rc.4",
+    "@angular/platform-browser-dynamic": "2.0.0-rc.4",
+    "@angular/router": "3.0.0-beta.1",
+    "@angular/router-deprecated": "2.0.0-rc.2",
+    "@angular/upgrade": "2.0.0-rc.4",
+    "systemjs": "0.19.36",
+    "core-js": "2.4.1",
+    "reflect-metadata": "0.1.3",
+    "rxjs": "5.0.0-beta.6",
+    "zone.js": "0.6.12",
+    "angular2-in-memory-web-api": "0.0.14",
+    "bootstrap": "3.3.6",
+    "jquery": "2.2.4",
+    "pug": "2.0.0-beta4",
+    "only": "0.0.2",
+    "html-md": "3.0.2",
+    "markdown": "0.5.0",
+    "htmlstrip-native": "0.1.3",
+    "font-awesome": "4.6.3",
+    "moment": "2.14.1",
+    "angular2-moment": "0.8.2",
+    "animate.css": "3.5.1"
+  },
+  "devDependencies": {
+    "gulp": "3.9.1",
+    "gulp-pug": "3.0.3",
+    "gulp-uglify": "1.5.4",
+    "gulp-ext-replace": "0.3.0",
+    "gulp-sass": "2.3.2",
+    "gulp-sync": "0.1.4",
+    "gulp-typescript": "2.13.6",
+    "gulp-sourcemaps": "1.6.0",
+    "tslint": "3.14.0",
+    "del": "2.1.0",
+    "typescript": "1.7.3",
+    "lite-server": "2.2.0",
+    "concurrently": "2.2.0",
+    "typings": "1.3.2",
+    "systemjs-builder": "0.15.26" 
+  },
+  "keywords": [
+    "development",
+    "dev",
+    "code",
+    "iOS",
+    "android",
+    "programming"
+  ],
+  "author": "Leonardo Cardoso",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/LeonardoCardoso/leocardz.com/issues"
+  },
+  "homepage": "https://github.com/LeonardoCardoso/leocardz.com#readme"
+}
