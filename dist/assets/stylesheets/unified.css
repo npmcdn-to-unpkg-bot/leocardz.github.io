@@ -205,14 +205,24 @@ fieldset[disabled] .btn-sample.active {
 .dynamic-content {
   margin: 80px 25px 20px; }
 
+footer {
+  background: #F7F7F7; }
+
 footer .content {
   background: #F7F7F7;
   border-top: 2px solid #c9c9c9; }
 
 footer .content .profile img {
   width: 100%;
-  margin: 16px 0px;
-  border: 1px solid #bbb; }
+  margin: auto;
+  margin-top: 20%;
+  border: 1px solid #bbb;
+  background-position: center center;
+  background-repeat: no-repeat; }
+
+@media only screen and (max-width: 1024px) {
+  .profile-hidden-1024 {
+    display: none; } }
 
 footer .content .profile .card h2 {
   color: #BF4C30;
@@ -250,7 +260,22 @@ footer a:hover {
   color: #c9c9c9; }
 
 footer .section {
-  padding: 15px 30px; }
+  padding: 15px 22px; }
+
+html, body {
+  height: 100%; }
+
+.dynamic-content {
+  min-height: calc(100% - 84px);
+  margin-bottom: -162px;
+  position: relative; }
+
+.dynamic-content:after {
+  content: "";
+  display: block; }
+
+footer, .dynamic-content:after {
+  height: 162px; }
 
 .spinner {
   width: 25px;

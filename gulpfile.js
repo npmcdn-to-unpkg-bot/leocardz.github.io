@@ -65,23 +65,34 @@ gulp.task("clear-libs", function () {
 gulp.task("copy-libs", function () {
     return gulp.src(
         [
-            "node_modules/**/antimoderate/**/*.*",
             "node_modules/**/animate.css/**/*.*",
+            
             "node_modules/**/angular2-moment/**/*.*",
+            
             "node_modules/**/font-awesome/**/*.*",
+            
             "node_modules/**/bootstrap/**/dist/**/*.*",
+            
             "node_modules/**/jquery/**/dist/**/*.*",
+
             "node_modules/**/angular2-moment/**/*.*",
             "!node_modules/**/angular2-moment/**/*.ts",
+
             "node_modules/**/moment/**/*.*",
             "!node_modules/**/moment/**/*.ts",
+
             "node_modules/**/@angular/**/*.*",
             "!node_modules/**/@angular/**/*.ts",
+
             "node_modules/**/rxjs/**/*.*",
             "!node_modules/**/rxjs/**/*.ts",
+
             "node_modules/**/core-js/client/shim.min.js",
+            
             "node_modules/**/zone.js/dist/zone.js",
+            
             "node_modules/**/reflect-metadata/Reflect.js",
+            
             "node_modules/**/systemjs/dist/system.src.js"
         ]
     )

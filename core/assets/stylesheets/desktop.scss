@@ -2,7 +2,11 @@
 $leftBarSize: 255px;
 $mainContentBarSize: calc(100% - 255px);
 $leftBarImgMaxWidth: 255px;
+$htmlHeight: 100%;
 $searchInputWidth: 100%;
+$searchInputHeight: 57px;
+$footerHeight: 162px;
+$dynamicContentHeight: calc(100% - 84px);
 
 .left-bar img {
     margin: 0px auto;
@@ -85,6 +89,10 @@ $searchInputWidth: 100%;
     margin: 80px 25px 20px;
 }
 
+footer {
+    background: $footerBackground;
+}
+
 footer .content {
     background: $footerBackground;
     border-top: 2px solid $darkGrey;
@@ -92,8 +100,19 @@ footer .content {
 
 footer .content .profile img {
     width: 100%;
-    margin: 16px 0px;
+    margin: auto;
+    margin-top: 20%;
     border: 1px solid $grey;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+@media only screen and (max-width: 1024px) {
+
+    .profile-hidden-1024 {
+        display: none;
+    }
+
 }
 
 footer .content .profile .card h2 {
@@ -139,5 +158,26 @@ footer a:hover {
 }
 
 footer .section {
-    padding: 15px 30px;
+    padding: 15px 22px;
 }
+
+// ---- Footer always on bottom
+
+html, body {
+	height: $htmlHeight;
+}
+
+.dynamic-content {
+    min-height: $dynamicContentHeight;
+    margin-bottom: -$footerHeight; 
+    position: relative;
+}
+.dynamic-content:after {
+    content: "";
+    display: block;
+}
+footer, .dynamic-content:after {
+	height: $footerHeight; 
+}
+
+// ----

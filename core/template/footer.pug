@@ -2,9 +2,10 @@ footer
     .col-lg-12.col-md-12.content
         .col-lg-5.col-md-5.margin-0.padding-0
             .col-lg-12.col-md-12.margin-0.padding-0.profile
-                .col-lg-4.col-md-4.margin-0.padding-0
+                .col-lg-3.col-md-3.margin-0.padding-0
                     img(src="dist/assets/images/profile.jpg")
-                .col-lg-8.col-md-8.card
+                    .clearfix
+                .col-lg-9.col-md-9.card
                     h2 Leonardo Cardoso
                     h4 💻 📱 🚀
                     ul
@@ -22,7 +23,7 @@ footer
                                 | leo@leocardz.com
         .col-lg-7.col-md-7
             .section.col-lg-4.col-md-4
-                h5 Site
+                h5 Website
                 ul
                     li
                         a([routerLink]="['/']") Home
@@ -30,6 +31,8 @@ footer
                         a([routerLink]="['/blog']") Blog
                     li
                         a([routerLink]="['/privacy']") Privacy
+                    li
+                        a([routerLink]="['/about']") About
             .section.col-lg-4.col-md-4
                 h5 Dev
                 ul
@@ -42,10 +45,8 @@ footer
                     li
                         a([routerLink]="['/open-source']") Open Source
             .section.col-lg-4.col-md-4
-                h5 Me
+                h5 Connections
                 ul
-                    li
-                        a([routerLink]="['/about']") About
                     li
                         a(href="https://twitter.com/leocardz" target="_blank") Twitter
                     li
@@ -54,3 +55,4 @@ footer
                         a(href="https://medium.com/@leocardz" target="_blank") Medium
                     li
                         a(href="https://linkedin.com/in/leocardz" target="_blank") LinkedIn
+    .clearfix
