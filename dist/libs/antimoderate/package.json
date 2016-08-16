@@ -1,0 +1,78 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "antimoderate@0.0.2",
+        "scope": null,
+        "escapedName": "antimoderate",
+        "name": "antimoderate",
+        "rawSpec": "0.0.2",
+        "spec": "0.0.2",
+        "type": "version"
+      },
+      "/Users/leocardz/Dev/git/leocardz.github.io"
+    ]
+  ],
+  "_from": "antimoderate@0.0.2",
+  "_id": "antimoderate@0.0.2",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/antimoderate",
+  "_nodeVersion": "5.3.0",
+  "_npmOperationalInternal": {
+    "host": "packages-16-east.internal.npmjs.com",
+    "tmp": "tmp/antimoderate-0.0.2.tgz_1461095478244_0.8106296025216579"
+  },
+  "_npmUser": {
+    "name": "sunstory",
+    "email": "semisation@gmail.com"
+  },
+  "_npmVersion": "3.5.3",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "antimoderate@0.0.2",
+    "scope": null,
+    "escapedName": "antimoderate",
+    "name": "antimoderate",
+    "rawSpec": "0.0.2",
+    "spec": "0.0.2",
+    "type": "version"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/antimoderate/-/antimoderate-0.0.2.tgz",
+  "_shasum": "adff390886bc78572d190da3d438ed9e15e0dc7f",
+  "_shrinkwrap": null,
+  "_spec": "antimoderate@0.0.2",
+  "_where": "/Users/leocardz/Dev/git/leocardz.github.io",
+  "bugs": {
+    "url": "https://github.com/sunstorymvp/antimoderate/issues"
+  },
+  "dependencies": {},
+  "description": "antimoderate",
+  "devDependencies": {},
+  "directories": {},
+  "dist": {
+    "shasum": "adff390886bc78572d190da3d438ed9e15e0dc7f",
+    "tarball": "https://registry.npmjs.org/antimoderate/-/antimoderate-0.0.2.tgz"
+  },
+  "gitHead": "047c7e66f91800067de5fb2597857c097da0595f",
+  "homepage": "https://github.com/sunstorymvp/antimoderate#readme",
+  "main": "antimoderate.js",
+  "maintainers": [
+    {
+      "name": "sunstory",
+      "email": "semisation@gmail.com"
+    }
+  ],
+  "name": "antimoderate",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sunstorymvp/antimoderate.git"
+  },
+  "scripts": {},
+  "version": "0.0.2"
+}

@@ -65,6 +65,7 @@ gulp.task("clear-libs", function () {
 gulp.task("copy-libs", function () {
     return gulp.src(
         [
+            "node_modules/**/antimoderate/**/*.*",
             "node_modules/**/animate.css/**/*.*",
             "node_modules/**/angular2-moment/**/*.*",
             "node_modules/**/font-awesome/**/*.*",
