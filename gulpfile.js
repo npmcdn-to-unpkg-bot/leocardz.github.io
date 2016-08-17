@@ -77,6 +77,9 @@ gulp.task("copy-libs", function () {
 
             "node_modules/**/jquery/**/dist/**/*.*",
 
+            "node_modules/**/ng2-pagination/**/*.*",
+            "!node_modules/**/ng2-pagination/**/*.ts",
+
             "node_modules/**/angular2-moment/**/*.*",
             "!node_modules/**/angular2-moment/**/*.ts",
 

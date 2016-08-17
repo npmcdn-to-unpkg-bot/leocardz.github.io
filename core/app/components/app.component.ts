@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { Router, NavigationStart, NavigationEnd, ROUTER_DIRECTIVES } from '@angular/router';
 import { HTTP_PROVIDERS } from '@angular/http';
 import { Title } from '@angular/platform-browser';
@@ -6,6 +6,7 @@ import { Title } from '@angular/platform-browser';
 import 'marked'; declare var marked: any;
 
 import { TimeAgoPipe } from 'angular2-moment';
+import { PaginatePipe, PaginationControlsCmp, PaginationService } from 'ng2-pagination';
 
 import { HomeComponent }  from './home.component';
 import { AndroidComponent }  from './android.component';
@@ -30,16 +31,21 @@ import { Post } from '../models/post';
     selector: 'app',
     templateUrl: 'dist/app/views/app.component.html',
     directives: [
-        ROUTER_DIRECTIVES
+        ROUTER_DIRECTIVES,
+        PaginationControlsCmp
     ],
-    pipes: [TimeAgoPipe],
+    pipes: [
+        TimeAgoPipe,
+        PaginatePipe
+    ],
     providers: [
         IndexService,
         SearchService,
         MetaService,
         LabelService,
         Title,
-        HTTP_PROVIDERS
+        HTTP_PROVIDERS,
+        PaginationService
     ],
     precompile: [
         HomeComponent,
@@ -84,7 +90,9 @@ export class AppComponent implements OnInit {
 
     actionSearch(s: string) {
 
-        this._indexService.search(res => this.posts = res, s);
+        this._indexService.search(res => {
+            this.posts = res;
+        }, s);
 
     }
 

@@ -13,6 +13,7 @@ var http_1 = require('@angular/http');
 var platform_browser_1 = require('@angular/platform-browser');
 require('marked');
 var angular2_moment_1 = require('angular2-moment');
+var ng2_pagination_1 = require('ng2-pagination');
 var home_component_1 = require('./home.component');
 var android_component_1 = require('./android.component');
 var blog_component_1 = require('./blog.component');
@@ -50,7 +51,9 @@ var AppComponent = (function () {
     AppComponent.prototype.ngOnInit = function () { };
     AppComponent.prototype.actionSearch = function (s) {
         var _this = this;
-        this._indexService.search(function (res) { return _this.posts = res; }, s);
+        this._indexService.search(function (res) {
+            _this.posts = res;
+        }, s);
     };
     AppComponent.prototype.actionNavigate = function (post) {
         this._router.navigate(['/' + post.label + "/" + post.path]);
@@ -72,16 +75,21 @@ var AppComponent = (function () {
             selector: 'app',
             templateUrl: 'dist/app/views/app.component.html',
             directives: [
-                router_1.ROUTER_DIRECTIVES
+                router_1.ROUTER_DIRECTIVES,
+                ng2_pagination_1.PaginationControlsCmp
             ],
-            pipes: [angular2_moment_1.TimeAgoPipe],
+            pipes: [
+                angular2_moment_1.TimeAgoPipe,
+                ng2_pagination_1.PaginatePipe
+            ],
             providers: [
                 index_service_1.IndexService,
                 search_service_1.SearchService,
                 meta_service_1.MetaService,
                 label_service_1.LabelService,
                 platform_browser_1.Title,
-                http_1.HTTP_PROVIDERS
+                http_1.HTTP_PROVIDERS,
+                ng2_pagination_1.PaginationService
             ],
             precompile: [
                 home_component_1.HomeComponent,

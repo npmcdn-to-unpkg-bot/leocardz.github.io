@@ -3,7 +3,7 @@
         input(type="text", placeholder="search everywhere", (keyup)="actionSearch($event.target.value)") 
         .clearfix
     .search-view
-        div(*ngFor="let post of posts")
+        div(*ngFor="let post of posts | paginate: { itemsPerPage: 12, currentPage: page, totalItems: posts.length }")
             .search-result
                 a((click)="actionNavigate(post)")
                     .title 
@@ -12,3 +12,6 @@
                     i
                         time {{post.date | amTimeAgo}}
                     .content([innerHTML]="markdown(post.content)")
+        .pagination-wrap([hidden]="posts.length === 0")
+            pagination-controls((pageChange)='page = $event', maxSize='5', directionLinks='false', autoHide='true')
+        .clearfix
