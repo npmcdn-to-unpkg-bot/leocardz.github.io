@@ -21,7 +21,7 @@ gulp.task("component-views", function buildHTML() {
         .pipe(gulp.dest("./dist/app"))
 });
 
-gulp.task("views", ["component-views"], function buildHTML() {
+gulp.task("views", function buildHTML() {
     return gulp.src("./core/*.pug")
         .pipe(replace(".html"))
         .pipe(pug({}))
@@ -65,14 +65,16 @@ gulp.task("clear-libs", function () {
 gulp.task("copy-libs", function () {
     return gulp.src(
         [
+            "node_modules/**/marked/**/*.*",
+
             "node_modules/**/animate.css/**/*.*",
-            
+
             "node_modules/**/angular2-moment/**/*.*",
-            
+
             "node_modules/**/font-awesome/**/*.*",
-            
+
             "node_modules/**/bootstrap/**/dist/**/*.*",
-            
+
             "node_modules/**/jquery/**/dist/**/*.*",
 
             "node_modules/**/angular2-moment/**/*.*",
@@ -88,11 +90,11 @@ gulp.task("copy-libs", function () {
             "!node_modules/**/rxjs/**/*.ts",
 
             "node_modules/**/core-js/client/shim.min.js",
-            
+
             "node_modules/**/zone.js/dist/zone.js",
-            
+
             "node_modules/**/reflect-metadata/Reflect.js",
-            
+
             "node_modules/**/systemjs/dist/system.src.js"
         ]
     )
@@ -115,12 +117,10 @@ gulp.task("scripts", function () {
 // ----------
 
 // Register watch task
-gulp.task("watch", function () {
+gulp.task("watch", ["build"], function () {
 
-    gulp.watch("./core/*.pug", ["views"]);
-    gulp.watch("./core/template/**/*.pug", ["views"]);
     gulp.watch("./core/app/**/*.ts", ["typescripts"]);
-    gulp.watch("./core/app/**/*.component.pug", ["component-views"]);
+    gulp.watch("./core/**/*.pug", ["component-views", "views"]);
     gulp.watch("./core/**/*.js", ["scripts"]);
     gulp.watch('./core/assets/stylesheets/*.scss', ['sass']);
 
@@ -171,9 +171,9 @@ gulp.task('bundle', function () {
 gulp.task("build", gulpsync.sync([
     "clear-all",
     "copy-libs",
-    "views",
     "images",
     "sass",
+    "views",
     "component-views",
     "scripts",
     "typescripts",
@@ -181,9 +181,9 @@ gulp.task("build", gulpsync.sync([
 ]));
 
 gulp.task("build-skip-copy", gulpsync.sync([
-    "views",
     "images",
     "sass",
+    "views",
     "component-views",
     "scripts",
     "typescripts",
@@ -194,7 +194,5 @@ gulp.task("build-skip-copy", gulpsync.sync([
 
 // Register default task
 gulp.task("default", [
-    "build",
-    "build-skip-copy",
     "watch"
 ]);

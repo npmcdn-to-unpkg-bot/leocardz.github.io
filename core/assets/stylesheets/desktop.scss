@@ -150,6 +150,9 @@ footer a {
     text-decoration: none;
     cursor: pointer;
     transition: $transition;
+    -webkit-transition: $transition; 
+    -moz-transition: $transition; 
+    -o-transition: $transition;
 }
 
 footer a:hover {
@@ -181,3 +184,43 @@ footer, .dynamic-content:after {
 }
 
 // ----
+
+.search-result {
+    border: 1px solid $darkGrey;
+    margin: 0 0 20px 0;
+    padding: 10px;
+    transition: $transition;
+    -webkit-transition: $transition; 
+    -moz-transition: $transition; 
+    -o-transition: $transition;
+}
+
+.search-result:hover {
+    cursor: pointer;
+    border: 1px solid $orange;
+}
+
+.search-result a {
+    text-decoration: none;
+    color: $textGrey;
+}
+
+.search-result .title {
+    font-weight: bold;
+    font-size: 18px;
+    transition: $transition;
+    -webkit-transition: $transition; 
+    -moz-transition: $transition; 
+    -o-transition: $transition;
+}
+.search-result .title span {
+    text-transform: uppercase;
+}
+
+.search-result:hover .title {
+    color: $orange;
+}
+
+.search-result .title strong, .search-result .content strong {
+    color: $orange;
+}

@@ -4,11 +4,11 @@
         .clearfix
     .search-view
         div(*ngFor="let post of posts")
-            div="{{post.title}}"
-            div="{{post.label}}"
-            div="{{post.date}}"
-            div="{{post.image}}"
-            div="{{post.content}}"
-            div
-                a((click)="actionNavigate(post)") this is the link
-            br
+            .search-result
+                a((click)="actionNavigate(post)")
+                    .title 
+                        span([innerHTML]="markdown(post.title)")
+                        | &bull; {{labelnize(post.label, true)}}
+                    i
+                        time {{post.date | amTimeAgo}}
+                    .content([innerHTML]="markdown(post.content)")

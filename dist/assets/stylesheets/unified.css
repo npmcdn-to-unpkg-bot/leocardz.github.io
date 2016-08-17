@@ -64,8 +64,10 @@ body {
   border-radius: 0px;
   font-weight: 400;
   font-size: 14px;
+  transition: all 0.5s ease;
   -webkit-transition: all 0.5s ease;
-  transition: all 0.5s ease; }
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease; }
 
 .btn-sample.uppercase {
   text-transform: uppercase; }
@@ -120,6 +122,9 @@ fieldset[disabled] .btn-sample.active {
 .activities .list a {
   color: #fff;
   transition: all 0.5s ease;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
   text-decoration: none;
   cursor: pointer; }
 
@@ -253,7 +258,10 @@ footer a {
   color: #BF4C30;
   text-decoration: none;
   cursor: pointer;
-  transition: all 0.5s ease; }
+  transition: all 0.5s ease;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease; }
 
 footer a:hover {
   text-decoration: none;
@@ -276,6 +284,40 @@ html, body {
 
 footer, .dynamic-content:after {
   height: 162px; }
+
+.search-result {
+  border: 1px solid #c9c9c9;
+  margin: 0 0 20px 0;
+  padding: 10px;
+  transition: all 0.5s ease;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease; }
+
+.search-result:hover {
+  cursor: pointer;
+  border: 1px solid #BF4C30; }
+
+.search-result a {
+  text-decoration: none;
+  color: #525252; }
+
+.search-result .title {
+  font-weight: bold;
+  font-size: 18px;
+  transition: all 0.5s ease;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease; }
+
+.search-result .title span {
+  text-transform: uppercase; }
+
+.search-result:hover .title {
+  color: #BF4C30; }
+
+.search-result .title strong, .search-result .content strong {
+  color: #BF4C30; }
 
 .spinner {
   width: 25px;
@@ -343,8 +385,10 @@ body {
   border-radius: 0px;
   font-weight: 400;
   font-size: 14px;
+  transition: all 0.5s ease;
   -webkit-transition: all 0.5s ease;
-  transition: all 0.5s ease; }
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease; }
 
 .btn-sample.uppercase {
   text-transform: uppercase; }
@@ -399,6 +443,9 @@ fieldset[disabled] .btn-sample.active {
 .activities .list a {
   color: #fff;
   transition: all 0.5s ease;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
   text-decoration: none;
   cursor: pointer; }
 
@@ -482,8 +529,10 @@ body {
   border-radius: 0px;
   font-weight: 400;
   font-size: 14px;
+  transition: all 0.5s ease;
   -webkit-transition: all 0.5s ease;
-  transition: all 0.5s ease; }
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease; }
 
 .btn-sample.uppercase {
   text-transform: uppercase; }
@@ -538,6 +587,9 @@ fieldset[disabled] .btn-sample.active {
 .activities .list a {
   color: #fff;
   transition: all 0.5s ease;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
   text-decoration: none;
   cursor: pointer; }
 

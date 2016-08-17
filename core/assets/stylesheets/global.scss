@@ -35,8 +35,10 @@ body {
   border-radius: 0px;
   font-weight: 400;
   font-size: 14px; 
-  -webkit-transition: $transition;
   transition: $transition;
+    -webkit-transition: $transition; 
+    -moz-transition: $transition; 
+    -o-transition: $transition;
 } 
 
 .btn-sample.uppercase { 
@@ -100,6 +102,9 @@ fieldset[disabled] .btn-sample.active {
 .activities .list a {
   color: $white;
   transition: $transition;
+    -webkit-transition: $transition; 
+    -moz-transition: $transition; 
+    -o-transition: $transition;
   text-decoration: none;
   cursor: pointer;
 }

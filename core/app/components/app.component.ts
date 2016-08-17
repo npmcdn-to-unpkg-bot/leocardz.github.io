@@ -3,6 +3,8 @@ import { Router, NavigationStart, NavigationEnd, ROUTER_DIRECTIVES } from '@angu
 import { HTTP_PROVIDERS } from '@angular/http';
 import { Title } from '@angular/platform-browser';
 
+import 'marked'; declare var marked: any;
+
 import { TimeAgoPipe } from 'angular2-moment';
 
 import { HomeComponent }  from './home.component';
@@ -19,6 +21,7 @@ import { NotFoundComponent }  from './not.found.component';
 import { IndexService } from '../services/index.service';
 import { SearchService } from '../services/search.service';
 import { MetaService } from '../services/meta.service';
+import { LabelService } from '../services/label.service';
 
 import { Post } from '../models/post';
 
@@ -34,6 +37,7 @@ import { Post } from '../models/post';
         IndexService,
         SearchService,
         MetaService,
+        LabelService,
         Title,
         HTTP_PROVIDERS
     ],
@@ -57,7 +61,12 @@ export class AppComponent implements OnInit {
     posts: Post[] = [];
     activities: Object[] = [];
 
-    constructor(private _router: Router, private _indexService: IndexService, private _metaService: MetaService) {
+    constructor(
+        private _router: Router,
+        private _indexService: IndexService,
+        private _metaService: MetaService,
+        private _labelService: LabelService
+    ) {
 
         _indexService.activities(res => this.activities = res);
 
@@ -88,6 +97,20 @@ export class AppComponent implements OnInit {
     getLinkStyle(path: string) {
 
         return (path === "/" && window.location.pathname === path) || (path !== "/" && window.location.pathname.indexOf(path) === 0);
+
+    }
+
+    labelnize(label: string, uppercase: boolean) {
+
+        return this._labelService.labelnize(label, uppercase);
+
+    }
+
+    markdown(s: string) {
+
+        s = s.replace(/\*\*\*\*/g, "");
+        const md = marked(s);
+        return md.substring(3, md.length - 5) + " ";
 
     }
 

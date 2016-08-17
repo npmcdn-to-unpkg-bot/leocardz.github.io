@@ -87,7 +87,7 @@ export class SearchService {
 
         const shortContent = result.content.substring(start, end);
 
-        const firstSpaceIndex = shortContent.indexOf(" ");
+        const firstSpaceIndex = shortContent.indexOf(" ") + 1;
         const lastSpaceIndex = shortContent.lastIndexOf(" ");
 
         result.content = "..." + shortContent.substring(firstSpaceIndex, lastSpaceIndex) + "...";
