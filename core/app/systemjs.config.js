@@ -11,7 +11,8 @@
         "rxjs": "dist/libs/rxjs",
         "moment": "dist/libs/moment",
         "angular2-moment": "dist/libs/angular2-moment",
-        "marked": "dist/libs/marked/lib/"
+        "ng2-pagination": "dist/libs/ng2-pagination",
+        "marked": "dist/libs/marked/lib"
     };
     // packages tells the System loader how to load when no filename and/or no extension
     var packages = {
@@ -20,6 +21,7 @@
         "angular2-in-memory-web-api": { main: "index", defaultExtension: "js" },
         "moment": { main: "moment", defaultExtension: "js" },
         "angular2-moment": { main: "index", defaultExtension: "js" },
+        "ng2-pagination": { main: "index", defaultExtension: "js" },
         "marked": { main: "marked", format: 'global', defaultExtension: "js" }
     };
     var ngPackageNames = [

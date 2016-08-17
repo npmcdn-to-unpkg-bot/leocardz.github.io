@@ -43,7 +43,8 @@
     "font-awesome": "4.6.3",
     "moment": "2.14.1",
     "angular2-moment": "0.8.2",
-    "animate.css": "3.5.1"
+    "animate.css": "3.5.1",
+    "ng2-pagination": "0.3.5"
   },
   "devDependencies": {
     "gulp": "3.9.1",

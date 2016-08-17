@@ -1,5 +1,5 @@
 // node build-index.js
-const fs = require("fs"); 
+const fs = require("fs");
 const extend = require("util")._extend;
 const only = require("only");
 
@@ -52,7 +52,7 @@ const suffix = ".json";
 const fullFile = "full.json";
 const fullData = JSON.stringify(searchIndexes);
 
-if(!fs.existsSync(prefix)) fs.mkdirSync(prefix);
+if (!fs.existsSync(prefix)) fs.mkdirSync(prefix);
 fs.writeFileSync(prefix + fullFile, fullData);
 
 for (var key in indexes) {

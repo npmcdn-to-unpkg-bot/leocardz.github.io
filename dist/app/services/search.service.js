@@ -15,7 +15,7 @@ var SearchService = (function () {
         return s.replace(/\s+/g, ' ').trim();
     };
     SearchService.prototype.perform = function (data, needle, fields, hightlight) {
-        var pattern = new RegExp('(' + needle + ')', 'gmi');
+        var pattern = new RegExp('(' + needle.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&") + ')', 'gmi');
         needle = this.extendedTrim(unescape(needle));
         var results = [];
         for (var r = 0; r < data.length; r++) {
@@ -34,7 +34,7 @@ var SearchService = (function () {
                         break;
                 }
                 else {
-                    if (element[fields[i]].indexOf(needle) !== -1 || pattern.test(element[fields[i]])) {
+                    if (needle === "*" || element[fields[i]].indexOf(needle) !== -1 || pattern.test(element[fields[i]])) {
                         found = true;
                         break;
                     }
@@ -56,8 +56,9 @@ var SearchService = (function () {
         result.title = result.title.replace(pattern, replace);
         result.content = result.content.replace(pattern, replace);
         var offset = 200;
-        var boldNeedle = "**" + needle + "**";
-        var boldNeedleIndex = result.content.indexOf(boldNeedle);
+        var contentReplic = result.content.toLowerCase();
+        var boldNeedle = "**" + needle.toLowerCase() + "**";
+        var boldNeedleIndex = needle === "*" ? 0 : contentReplic.indexOf(boldNeedle);
         var start = boldNeedleIndex < offset ? 0 : boldNeedleIndex - offset;
         var needleEnd = boldNeedleIndex + boldNeedle.length;
         var end = needleEnd > result.content.length - (offset + 1) ? result.content.length : (needleEnd + offset);

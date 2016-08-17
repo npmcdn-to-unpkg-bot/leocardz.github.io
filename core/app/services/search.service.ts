@@ -16,7 +16,7 @@ export class SearchService {
 
     perform(data: Post[], needle: string, fields: string[], hightlight: boolean) {
 
-        const pattern: RegExp = new RegExp('(' + needle + ')', 'gmi');
+        const pattern: RegExp = new RegExp('(' + needle.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&") + ')', 'gmi');
 
         needle = this.extendedTrim(unescape(needle));
 
@@ -44,7 +44,7 @@ export class SearchService {
 
                 } else {
 
-                    if (element[fields[i]].indexOf(needle) !== -1 || pattern.test(element[fields[i]])) {
+                    if (needle === "*" || element[fields[i]].indexOf(needle) !== -1 || pattern.test(element[fields[i]])) {
                         found = true;
                         break;
                     }
@@ -78,8 +78,9 @@ export class SearchService {
 
         const offset = 200;
 
-        const boldNeedle = "**" + needle + "**";
-        const boldNeedleIndex = result.content.indexOf(boldNeedle);
+        const contentReplic = result.content.toLowerCase();
+        const boldNeedle = "**" + needle.toLowerCase() + "**";
+        const boldNeedleIndex = needle === "*" ? 0 : contentReplic.indexOf(boldNeedle);
 
         const start = boldNeedleIndex < offset ? 0 : boldNeedleIndex - offset;
         const needleEnd = boldNeedleIndex + boldNeedle.length;
