@@ -1,5 +1,5 @@
 [![](https://img.shields.io/badge/platform-iOS%20%7C%20macOS%20%7C%20watchOS%20%7C%20tvOS-orange.svg)][0]
-[![](https://img.shields.io/badge/pod-v0.1.4-red.svg)][1]
+[![](https://img.shields.io/badge/pod-v0.1.5-red.svg)][1]
 [![](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg)][2]
 [![](https://img.shields.io/badge/SPM-compatible-orange.svg)][3]
 [![](https://travis-ci.org/LeonardoCardoso/SwiftLinkPreview.svg?branch=master)][4]
@@ -43,7 +43,7 @@ Podfile file.
     target 'Your Project Name' do
         use_frameworks!
         // ...
-        pod 'SwiftLinkPreview', '~> 0.1.4'
+        pod 'SwiftLinkPreview', '~> 0.1.5'
         // ...
     end
     
@@ -54,7 +54,7 @@ To use **SwiftLinkPreview** as a Carthage module package just add the following 
 
     
     // ...
-    github "LeonardoCardoso/SwiftLinkPreview" ~> 0.1.4
+    github "LeonardoCardoso/SwiftLinkPreview" ~> 0.1.5
     // ...
 
 ### Swift Package Manager
