@@ -77,9 +77,6 @@ gulp.task("copy-libs", function () {
 
             "node_modules/**/jquery/**/dist/**/*.*",
 
-            "node_modules/**/ng2-pagination/**/*.*",
-            "!node_modules/**/ng2-pagination/**/*.ts",
-
             "node_modules/**/angular2-moment/**/*.*",
             "!node_modules/**/angular2-moment/**/*.ts",
 
@@ -122,10 +119,10 @@ gulp.task("scripts", function () {
 // Register watch task
 gulp.task("watch", ["build"], function () {
 
-    gulp.watch("./core/app/**/*.ts", ["typescripts"]);
+    gulp.watch("./core/**/*.ts", ["typescripts", "bundle"]);
     gulp.watch("./core/**/*.pug", ["component-views", "views"]);
     gulp.watch("./core/**/*.js", ["scripts"]);
-    gulp.watch('./core/assets/stylesheets/*.scss', ['sass']);
+    gulp.watch('./core/**/*.scss', ['sass']);
 
 });
 
@@ -149,7 +146,7 @@ gulp.task('typescripts', function () {
 // ----------
 
 /** then bundle */
-gulp.task('bundle', function () {
+gulp.task('bundle', ["typescripts"], function () {
 
     var builder = new Builder('', 'dist/app/systemjs.config.js');
 
@@ -179,7 +176,6 @@ gulp.task("build", gulpsync.sync([
     "views",
     "component-views",
     "scripts",
-    "typescripts",
     "bundle"
 ]));
 
@@ -189,7 +185,6 @@ gulp.task("build-skip-copy", gulpsync.sync([
     "views",
     "component-views",
     "scripts",
-    "typescripts",
     "bundle"
 ]));
 

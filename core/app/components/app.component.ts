@@ -6,7 +6,6 @@ import { Title } from '@angular/platform-browser';
 import 'marked'; declare var marked: any;
 
 import { TimeAgoPipe } from 'angular2-moment';
-import { PaginatePipe, PaginationControlsCmp, PaginationService } from 'ng2-pagination';
 
 import { HomeComponent }  from './home.component';
 import { AndroidComponent }  from './android.component';
@@ -31,12 +30,10 @@ import { Post } from '../models/post';
     selector: 'app',
     templateUrl: 'dist/app/views/app.component.html',
     directives: [
-        ROUTER_DIRECTIVES,
-        PaginationControlsCmp
+        ROUTER_DIRECTIVES
     ],
     pipes: [
-        TimeAgoPipe,
-        PaginatePipe
+        TimeAgoPipe
     ],
     providers: [
         IndexService,
@@ -44,8 +41,7 @@ import { Post } from '../models/post';
         MetaService,
         LabelService,
         Title,
-        HTTP_PROVIDERS,
-        PaginationService
+        HTTP_PROVIDERS
     ],
     precompile: [
         HomeComponent,
@@ -90,9 +86,7 @@ export class AppComponent implements OnInit {
 
     actionSearch(s: string) {
 
-        this._indexService.search(res => {
-            this.posts = res;
-        }, s);
+        this._indexService.search(res => this.posts = res, s);
 
     }
 

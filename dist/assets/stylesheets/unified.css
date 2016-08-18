@@ -219,7 +219,7 @@ footer .content {
 
 footer .content .profile img {
   width: 100%;
-  margin: auto;
+  margin: auto auto 20% auto;
   margin-top: 20%;
   border: 1px solid #bbb;
   background-position: center center;
