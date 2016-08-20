@@ -14,35 +14,41 @@ var index_service_1 = require('../services/index.service');
 var meta_service_1 = require('../services/meta.service');
 var IOSComponent = (function () {
     function IOSComponent(_metaService, _router, _route, _indexService) {
-        var _this = this;
         this._metaService = _metaService;
         this._router = _router;
         this._route = _route;
         this._indexService = _indexService;
-        var params = this._route.snapshot.params;
-        if (undefined !== params["post"]) {
-            _indexService.getPost("ios", params["post"])
+        this.params = {};
+        this.title = "iOS";
+        this.label = "ios";
+        this.params = this._route.snapshot.params;
+    }
+    IOSComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        if (undefined !== this.params["post"]) {
+            this._indexService.getPost(this.label, this.params["post"])
                 .subscribe(function (data) {
                 var res = data[0];
                 var markdown = data[1];
                 console.log(res);
                 console.log(markdown._body);
-                _metaService.setData({
+                _this._metaService.setData({
                     title: res.title,
                     description: res.content,
-                    image: "/ios/" + res.path + "/" + res.image,
-                    url: "/ios/" + res.path
+                    image: "/" + _this.label + "/" + res.path + "/" + res.image,
+                    url: "/" + _this.label + "/" + res.path
                 });
             }, function (error) { return _this._router.navigate(['/not-found']); });
         }
         else {
-            _metaService.setData({ title: "iOS", url: "/ios" });
-            _indexService.after = function () {
-                _indexService.filter(function (res) { console.log(res.length); }, "ios");
-            };
+            this._metaService.setData({ title: this.title, url: "/" + this.label });
+            this._indexService.fetch()
+                .map(function (res) { return res.json(); })
+                .subscribe(function (res) {
+                console.log(_this._indexService.search(res, _this.label, ["label"], false));
+            });
         }
-    }
-    IOSComponent.prototype.ngOnInit = function () { };
+    };
     IOSComponent = __decorate([
         core_1.Component({
             moduleId: module.id,

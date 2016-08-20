@@ -11,48 +11,8 @@ import { Observable } from 'rxjs/Rx';
 export class IndexService {
 
     fullData: Post[] = [];
-    after = function () { };
 
-    constructor(private _http: Http, private _searchService: SearchService) {
-
-        this._http.get('indexes/full.json')
-            .map((res: Response) => res.json())
-            .subscribe(res => {
-                this.fullData = res;
-                this.after();
-            });
-
-    }
-
-    select(callback: ((value: Post[]) => void), needle: string = "", fields: string[], hightlight: boolean = true) {
-
-        if (needle === "") {
-            callback([]);
-        } else if (needle === "home") {
-            callback(this.fullData);
-        } else {
-            callback(this._searchService.perform(this.fullData, needle, fields, hightlight));
-        }
-
-    }
-
-    search(callback: ((value: Post[]) => void), needle: string = "") {
-
-        this.select(callback, needle, ["title", "content"]);
-
-    }
-
-    filter(callback: any, label: string = "") {
-
-        this.select(callback, label, ["label"], false);
-
-    }
-
-    tag(callback: ((value: Post[]) => void), tag: string) {
-
-        this.select(callback, tag, ["tags"], false);
-
-    }
+    constructor(private _http: Http, private _searchService: SearchService) { }
 
     activities(callback: ((value: Object[]) => void)) {
 
@@ -71,15 +31,13 @@ export class IndexService {
 
     }
 
-    /////////////////////
-
     fetch(): Observable<Response> {
 
         return this._http.get('indexes/full.json');
 
     }
 
-    filterObs(fullData: Post[], needle: string = "", fields: string[], hightlight: boolean = true): any {
+    search(fullData: Post[], needle: string = "", fields: string[], hightlight: boolean = true): any {
 
         if (needle === "") {
             return [];

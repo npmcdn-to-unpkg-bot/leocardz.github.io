@@ -13,12 +13,15 @@ var index_service_1 = require('../services/index.service');
 var meta_service_1 = require('../services/meta.service');
 var HomeComponent = (function () {
     function HomeComponent(_metaService, _indexService) {
+        var _this = this;
         this._metaService = _metaService;
         this._indexService = _indexService;
         _metaService.setData({});
-        _indexService.after = function () {
-            _indexService.filter(function (res) { console.log(res.length); }, "home");
-        };
+        this._indexService.fetch()
+            .map(function (res) { return res.json(); })
+            .subscribe(function (res) {
+            console.log(_this._indexService.search(res, "home", ["label"]));
+        });
     }
     HomeComponent.prototype.ngOnInit = function () { };
     HomeComponent = __decorate([

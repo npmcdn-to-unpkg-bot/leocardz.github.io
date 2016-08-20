@@ -7,100 +7,59 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
+var core_1 = require('@angular/core');
 var http_1 = require('@angular/http');
-var platform_browser_1 = require('@angular/platform-browser');
-require('marked');
 var angular2_moment_1 = require('angular2-moment');
-var home_component_1 = require('./home.component');
-var android_component_1 = require('./android.component');
-var blog_component_1 = require('./blog.component');
-var ios_component_1 = require('./ios.component');
-var lab_component_1 = require('./lab.component');
-var about_component_1 = require('./about.component');
-var open_source_component_1 = require('./open.source.component');
-var privacy_component_1 = require('./privacy.component');
-var tag_component_1 = require('./tag.component');
-var not_found_component_1 = require('./not.found.component');
 var index_service_1 = require('../services/index.service');
-var search_service_1 = require('../services/search.service');
 var meta_service_1 = require('../services/meta.service');
 var label_service_1 = require('../services/label.service');
-var AppComponent = (function () {
-    function AppComponent(_router, _indexService, _metaService, _labelService) {
-        var _this = this;
+var TagComponent = (function () {
+    function TagComponent(_router, _route, _indexService, _metaService, _labelService) {
         this._router = _router;
+        this._route = _route;
         this._indexService = _indexService;
         this._metaService = _metaService;
         this._labelService = _labelService;
-        this.isLoading = true;
         this.posts = [];
-        this.activities = [];
-        _indexService.activities(function (res) { return _this.activities = res; });
-        _router.events.subscribe(function (event) {
-            if (event instanceof router_1.NavigationStart) {
-                _this.posts = [];
-                _this.isLoading = true;
-            }
-            else if (event instanceof router_1.NavigationEnd)
-                _this.isLoading = false;
-        });
+        this.tag = "";
+        this.tag = this._route.snapshot.params["tag"];
+        _metaService.setData({ title: this.tag, url: "/tag/" + this.tag });
     }
-    AppComponent.prototype.ngOnInit = function () { };
-    AppComponent.prototype.actionSearch = function (s) {
-        var _this = this;
-        this._indexService.search(function (res) { return _this.posts = res; }, s);
-    };
-    AppComponent.prototype.actionNavigate = function (post) {
+    TagComponent.prototype.actionNavigate = function (post) {
         this._router.navigate(['/' + post.label + "/" + post.path]);
     };
-    AppComponent.prototype.getLinkStyle = function (path) {
-        return (path === "/" && window.location.pathname === path) || (path !== "/" && window.location.pathname.indexOf(path) === 0);
-    };
-    AppComponent.prototype.labelnize = function (label, uppercase) {
+    TagComponent.prototype.labelnize = function (label, uppercase) {
+        console.log(label);
         return this._labelService.labelnize(label, uppercase);
     };
-    AppComponent.prototype.markdown = function (s) {
-        s = s.replace(/\*\*\*\*/g, "");
-        var md = marked(s);
-        return md.substring(3, md.length - 5) + " ";
+    TagComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this._indexService.fetch()
+            .map(function (res) { return res.json(); })
+            .subscribe(function (res) {
+            _this.posts = _this._indexService.searchObs(res, _this.tag, ["tags"], false);
+        });
     };
-    AppComponent = __decorate([
+    TagComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
-            selector: 'app',
-            templateUrl: '/dist/app/views/app.component.html',
+            selector: 'tab',
+            templateUrl: '/dist/app/views/tag.component.html',
             directives: [
                 router_1.ROUTER_DIRECTIVES
             ],
-            pipes: [
-                angular2_moment_1.TimeAgoPipe
-            ],
             providers: [
                 index_service_1.IndexService,
-                search_service_1.SearchService,
-                meta_service_1.MetaService,
-                label_service_1.LabelService,
-                platform_browser_1.Title,
                 http_1.HTTP_PROVIDERS
             ],
-            precompile: [
-                home_component_1.HomeComponent,
-                android_component_1.AndroidComponent,
-                blog_component_1.BlogComponent,
-                ios_component_1.IOSComponent,
-                lab_component_1.LabComponent,
-                about_component_1.AboutComponent,
-                open_source_component_1.OpenSourceComponent,
-                privacy_component_1.PrivacyComponent,
-                tag_component_1.TagComponent,
-                not_found_component_1.NotFoundComponent
+            pipes: [
+                angular2_moment_1.TimeAgoPipe
             ]
         }), 
-        __metadata('design:paramtypes', [router_1.Router, index_service_1.IndexService, meta_service_1.MetaService, label_service_1.LabelService])
-    ], AppComponent);
-    return AppComponent;
+        __metadata('design:paramtypes', [router_1.Router, router_1.ActivatedRoute, index_service_1.IndexService, meta_service_1.MetaService, label_service_1.LabelService])
+    ], TagComponent);
+    return TagComponent;
 })();
-exports.AppComponent = AppComponent;
+exports.TagComponent = TagComponent;
 //# sourceMappingURL=base.component.js.map

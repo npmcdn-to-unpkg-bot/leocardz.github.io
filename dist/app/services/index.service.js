@@ -13,42 +13,10 @@ var search_service_1 = require('./search.service');
 var Rx_1 = require('rxjs/Rx');
 var IndexService = (function () {
     function IndexService(_http, _searchService) {
-        var _this = this;
         this._http = _http;
         this._searchService = _searchService;
         this.fullData = [];
-        this.after = function () { };
-        this._http.get('indexes/full.json')
-            .map(function (res) { return res.json(); })
-            .subscribe(function (res) {
-            _this.fullData = res;
-            _this.after();
-        });
     }
-    IndexService.prototype.select = function (callback, needle, fields, hightlight) {
-        if (needle === void 0) { needle = ""; }
-        if (hightlight === void 0) { hightlight = true; }
-        if (needle === "") {
-            callback([]);
-        }
-        else if (needle === "home") {
-            callback(this.fullData);
-        }
-        else {
-            callback(this._searchService.perform(this.fullData, needle, fields, hightlight));
-        }
-    };
-    IndexService.prototype.search = function (callback, needle) {
-        if (needle === void 0) { needle = ""; }
-        this.select(callback, needle, ["title", "content"]);
-    };
-    IndexService.prototype.filter = function (callback, label) {
-        if (label === void 0) { label = ""; }
-        this.select(callback, label, ["label"], false);
-    };
-    IndexService.prototype.tag = function (callback, tag) {
-        this.select(callback, tag, ["tags"], false);
-    };
     IndexService.prototype.activities = function (callback) {
         this._http.get('indexes/activities.json')
             .map(function (res) { return res.json(); })
@@ -60,7 +28,7 @@ var IndexService = (function () {
     IndexService.prototype.fetch = function () {
         return this._http.get('indexes/full.json');
     };
-    IndexService.prototype.filterObs = function (fullData, needle, fields, hightlight) {
+    IndexService.prototype.search = function (fullData, needle, fields, hightlight) {
         if (needle === void 0) { needle = ""; }
         if (hightlight === void 0) { hightlight = true; }
         if (needle === "") {

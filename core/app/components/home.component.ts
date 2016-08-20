@@ -17,11 +17,13 @@ export class HomeComponent implements OnInit {
     constructor(private _metaService: MetaService, private _indexService: IndexService) {
 
         _metaService.setData({});
-        _indexService.after = function () {
 
-            _indexService.filter(function (res: Post[]) { console.log(res.length); }, "home");
+        this._indexService.fetch()
+            .map(res => res.json())
+            .subscribe((res: Post[]) => {
+                console.log(this._indexService.search(res, "home", ["label"]));
+            });
 
-        };
 
     }
 

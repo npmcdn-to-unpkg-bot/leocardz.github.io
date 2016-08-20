@@ -86,7 +86,11 @@ export class AppComponent implements OnInit {
 
     actionSearch(s: string) {
 
-        this._indexService.search(res => this.posts = res, s);
+        this._indexService.fetch()
+            .map(res => res.json())
+            .subscribe((res: Post[]) => {
+                this.posts = this._indexService.search(res, s, ["title", "content"]);
+            });
 
     }
 

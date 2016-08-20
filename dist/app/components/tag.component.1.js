@@ -38,7 +38,7 @@ var TagComponent = (function () {
         this._indexService.fetch()
             .map(function (res) { return res.json(); })
             .subscribe(function (res) {
-            _this.posts = _this._indexService.search(res, _this.tag, ["tags"], false);
+            _this.posts = _this._indexService.searchObs(res, _this.tag, ["tags"], false);
         });
     };
     TagComponent = __decorate([
@@ -62,4 +62,4 @@ var TagComponent = (function () {
     return TagComponent;
 })();
 exports.TagComponent = TagComponent;
-//# sourceMappingURL=tag.component.js.map
+//# sourceMappingURL=tag.component.1.js.map

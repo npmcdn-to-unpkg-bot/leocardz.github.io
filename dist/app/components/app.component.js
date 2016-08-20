@@ -50,7 +50,11 @@ var AppComponent = (function () {
     AppComponent.prototype.ngOnInit = function () { };
     AppComponent.prototype.actionSearch = function (s) {
         var _this = this;
-        this._indexService.search(function (res) { return _this.posts = res; }, s);
+        this._indexService.fetch()
+            .map(function (res) { return res.json(); })
+            .subscribe(function (res) {
+            _this.posts = _this._indexService.search(res, s, ["title", "content"]);
+        });
     };
     AppComponent.prototype.actionNavigate = function (post) {
         this._router.navigate(['/' + post.label + "/" + post.path]);
