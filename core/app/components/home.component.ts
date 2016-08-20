@@ -9,7 +9,7 @@ import { Post } from '../models/post';
 @Component({
     moduleId: module.id,
     selector: 'home',
-    templateUrl: 'dist/app/views/home.component.html',
+    templateUrl: '/dist/app/views/home.component.html',
     providers: [IndexService, HTTP_PROVIDERS]
 })
 export class HomeComponent implements OnInit {

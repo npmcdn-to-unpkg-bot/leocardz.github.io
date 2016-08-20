@@ -1,2 +1,65 @@
-"use strict";var __decorate=this&&this.__decorate||function(e,t,r,a){var i,o=arguments.length,n=o<3?t:null===a?a=Object.getOwnPropertyDescriptor(t,r):a;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)n=Reflect.decorate(e,t,r,a);else for(var c=e.length-1;c>=0;c--)(i=e[c])&&(n=(o<3?i(n):o>3?i(t,r,n):i(t,r))||n);return o>3&&n&&Object.defineProperty(t,r,n),n},__metadata=this&&this.__metadata||function(e,t){if("object"==typeof Reflect&&"function"==typeof Reflect.metadata)return Reflect.metadata(e,t)},router_1=require("@angular/router"),core_1=require("@angular/core"),http_1=require("@angular/http"),index_service_1=require("../services/index.service"),meta_service_1=require("../services/meta.service"),TagComponent=function(){function e(e,t,r){this._route=e,this._indexService=t,this._metaService=r;var a=this._route.snapshot.params.tag;r.setData({title:a,url:"/tag/"+a}),t.after=function(){t.tag(function(e){console.log(e)},a)}}return e.prototype.ngOnInit=function(){},e=__decorate([core_1.Component({moduleId:module.id,selector:"tab",templateUrl:"dist/app/views/tag.component.html",providers:[index_service_1.IndexService,http_1.HTTP_PROVIDERS]}),__metadata("design:paramtypes",[router_1.ActivatedRoute,index_service_1.IndexService,meta_service_1.MetaService])],e)}();exports.TagComponent=TagComponent;
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImNvbXBvbmVudHMvdGFnLmNvbXBvbmVudC5qcyJdLCJuYW1lcyI6WyJfX2RlY29yYXRlIiwidGhpcyIsImRlY29yYXRvcnMiLCJ0YXJnZXQiLCJrZXkiLCJkZXNjIiwiZCIsImMiLCJhcmd1bWVudHMiLCJsZW5ndGgiLCJyIiwiT2JqZWN0IiwiZ2V0T3duUHJvcGVydHlEZXNjcmlwdG9yIiwiUmVmbGVjdCIsImRlY29yYXRlIiwiaSIsImRlZmluZVByb3BlcnR5IiwiX19tZXRhZGF0YSIsImsiLCJ2IiwibWV0YWRhdGEiLCJyb3V0ZXJfMSIsInJlcXVpcmUiLCJjb3JlXzEiLCJodHRwXzEiLCJpbmRleF9zZXJ2aWNlXzEiLCJtZXRhX3NlcnZpY2VfMSIsIlRhZ0NvbXBvbmVudCIsIl9yb3V0ZSIsIl9pbmRleFNlcnZpY2UiLCJfbWV0YVNlcnZpY2UiLCJ0YWciLCJzbmFwc2hvdCIsInBhcmFtcyIsInNldERhdGEiLCJ0aXRsZSIsInVybCIsImFmdGVyIiwicmVzIiwiY29uc29sZSIsImxvZyIsInByb3RvdHlwZSIsIm5nT25Jbml0IiwiQ29tcG9uZW50IiwibW9kdWxlSWQiLCJtb2R1bGUiLCJpZCIsInNlbGVjdG9yIiwidGVtcGxhdGVVcmwiLCJwcm92aWRlcnMiLCJJbmRleFNlcnZpY2UiLCJIVFRQX1BST1ZJREVSUyIsIkFjdGl2YXRlZFJvdXRlIiwiTWV0YVNlcnZpY2UiLCJleHBvcnRzIl0sIm1hcHBpbmdzIjoiQUFBQSxZQUNBLElBQUlBLFlBQWNDLE1BQVFBLEtBQUtELFlBQWUsU0FBVUUsRUFBWUMsRUFBUUMsRUFBS0MsR0FDN0UsR0FBMkhDLEdBQXZIQyxFQUFJQyxVQUFVQyxPQUFRQyxFQUFJSCxFQUFJLEVBQUlKLEVBQWtCLE9BQVRFLEVBQWdCQSxFQUFPTSxPQUFPQyx5QkFBeUJULEVBQVFDLEdBQU9DLENBQ3JILElBQXVCLGdCQUFaUSxVQUFvRCxrQkFBckJBLFNBQVFDLFNBQXlCSixFQUFJRyxRQUFRQyxTQUFTWixFQUFZQyxFQUFRQyxFQUFLQyxPQUNwSCxLQUFLLEdBQUlVLEdBQUliLEVBQVdPLE9BQVMsRUFBR00sR0FBSyxFQUFHQSxLQUFTVCxFQUFJSixFQUFXYSxNQUFJTCxHQUFLSCxFQUFJLEVBQUlELEVBQUVJLEdBQUtILEVBQUksRUFBSUQsRUFBRUgsRUFBUUMsRUFBS00sR0FBS0osRUFBRUgsRUFBUUMsS0FBU00sRUFDaEosT0FBT0gsR0FBSSxHQUFLRyxHQUFLQyxPQUFPSyxlQUFlYixFQUFRQyxFQUFLTSxHQUFJQSxHQUU1RE8sV0FBY2hCLE1BQVFBLEtBQUtnQixZQUFlLFNBQVVDLEVBQUdDLEdBQ3ZELEdBQXVCLGdCQUFaTixVQUFvRCxrQkFBckJBLFNBQVFPLFNBQXlCLE1BQU9QLFNBQVFPLFNBQVNGLEVBQUdDLElBRXRHRSxTQUFXQyxRQUFRLG1CQUNuQkMsT0FBU0QsUUFBUSxpQkFDakJFLE9BQVNGLFFBQVEsaUJBQ2pCRyxnQkFBa0JILFFBQVEsNkJBQzFCSSxlQUFpQkosUUFBUSw0QkFDekJLLGFBQWdCLFdBQ2hCLFFBQVNBLEdBQWFDLEVBQVFDLEVBQWVDLEdBQ3pDN0IsS0FBSzJCLE9BQVNBLEVBQ2QzQixLQUFLNEIsY0FBZ0JBLEVBQ3JCNUIsS0FBSzZCLGFBQWVBLENBQ3BCLElBQUlDLEdBQU05QixLQUFLMkIsT0FBT0ksU0FBU0MsT0FBWSxHQUMzQ0gsR0FBYUksU0FBVUMsTUFBT0osRUFBS0ssSUFBSyxRQUFVTCxJQUNsREYsRUFBY1EsTUFBUSxXQUNsQlIsRUFBY0UsSUFBSSxTQUFVTyxHQUFPQyxRQUFRQyxJQUFJRixJQUFTUCxJQWFoRSxNQVZBSixHQUFhYyxVQUFVQyxTQUFXLGFBQ2xDZixFQUFlM0IsWUFDWHVCLE9BQU9vQixXQUNIQyxTQUFVQyxPQUFPQyxHQUNqQkMsU0FBVSxNQUNWQyxZQUFhLG9DQUNiQyxXQUFZeEIsZ0JBQWdCeUIsYUFBYzFCLE9BQU8yQixrQkFFckRsQyxXQUFXLHFCQUFzQkksU0FBUytCLGVBQWdCM0IsZ0JBQWdCeUIsYUFBY3hCLGVBQWUyQixlQUN4RzFCLEtBR1AyQixTQUFRM0IsYUFBZUEiLCJmaWxlIjoiY29tcG9uZW50cy90YWcuY29tcG9uZW50LmpzIiwic291cmNlc0NvbnRlbnQiOlsiXCJ1c2Ugc3RyaWN0XCI7XG52YXIgX19kZWNvcmF0ZSA9ICh0aGlzICYmIHRoaXMuX19kZWNvcmF0ZSkgfHwgZnVuY3Rpb24gKGRlY29yYXRvcnMsIHRhcmdldCwga2V5LCBkZXNjKSB7XG4gICAgdmFyIGMgPSBhcmd1bWVudHMubGVuZ3RoLCByID0gYyA8IDMgPyB0YXJnZXQgOiBkZXNjID09PSBudWxsID8gZGVzYyA9IE9iamVjdC5nZXRPd25Qcm9wZXJ0eURlc2NyaXB0b3IodGFyZ2V0LCBrZXkpIDogZGVzYywgZDtcbiAgICBpZiAodHlwZW9mIFJlZmxlY3QgPT09IFwib2JqZWN0XCIgJiYgdHlwZW9mIFJlZmxlY3QuZGVjb3JhdGUgPT09IFwiZnVuY3Rpb25cIikgciA9IFJlZmxlY3QuZGVjb3JhdGUoZGVjb3JhdG9ycywgdGFyZ2V0LCBrZXksIGRlc2MpO1xuICAgIGVsc2UgZm9yICh2YXIgaSA9IGRlY29yYXRvcnMubGVuZ3RoIC0gMTsgaSA+PSAwOyBpLS0pIGlmIChkID0gZGVjb3JhdG9yc1tpXSkgciA9IChjIDwgMyA/IGQocikgOiBjID4gMyA/IGQodGFyZ2V0LCBrZXksIHIpIDogZCh0YXJnZXQsIGtleSkpIHx8IHI7XG4gICAgcmV0dXJuIGMgPiAzICYmIHIgJiYgT2JqZWN0LmRlZmluZVByb3BlcnR5KHRhcmdldCwga2V5LCByKSwgcjtcbn07XG52YXIgX19tZXRhZGF0YSA9ICh0aGlzICYmIHRoaXMuX19tZXRhZGF0YSkgfHwgZnVuY3Rpb24gKGssIHYpIHtcbiAgICBpZiAodHlwZW9mIFJlZmxlY3QgPT09IFwib2JqZWN0XCIgJiYgdHlwZW9mIFJlZmxlY3QubWV0YWRhdGEgPT09IFwiZnVuY3Rpb25cIikgcmV0dXJuIFJlZmxlY3QubWV0YWRhdGEoaywgdik7XG59O1xudmFyIHJvdXRlcl8xID0gcmVxdWlyZSgnQGFuZ3VsYXIvcm91dGVyJyk7XG52YXIgY29yZV8xID0gcmVxdWlyZSgnQGFuZ3VsYXIvY29yZScpO1xudmFyIGh0dHBfMSA9IHJlcXVpcmUoJ0Bhbmd1bGFyL2h0dHAnKTtcbnZhciBpbmRleF9zZXJ2aWNlXzEgPSByZXF1aXJlKCcuLi9zZXJ2aWNlcy9pbmRleC5zZXJ2aWNlJyk7XG52YXIgbWV0YV9zZXJ2aWNlXzEgPSByZXF1aXJlKCcuLi9zZXJ2aWNlcy9tZXRhLnNlcnZpY2UnKTtcbnZhciBUYWdDb21wb25lbnQgPSAoZnVuY3Rpb24gKCkge1xuICAgIGZ1bmN0aW9uIFRhZ0NvbXBvbmVudChfcm91dGUsIF9pbmRleFNlcnZpY2UsIF9tZXRhU2VydmljZSkge1xuICAgICAgICB0aGlzLl9yb3V0ZSA9IF9yb3V0ZTtcbiAgICAgICAgdGhpcy5faW5kZXhTZXJ2aWNlID0gX2luZGV4U2VydmljZTtcbiAgICAgICAgdGhpcy5fbWV0YVNlcnZpY2UgPSBfbWV0YVNlcnZpY2U7XG4gICAgICAgIHZhciB0YWcgPSB0aGlzLl9yb3V0ZS5zbmFwc2hvdC5wYXJhbXNbXCJ0YWdcIl07XG4gICAgICAgIF9tZXRhU2VydmljZS5zZXREYXRhKHsgdGl0bGU6IHRhZywgdXJsOiBcIi90YWcvXCIgKyB0YWcgfSk7XG4gICAgICAgIF9pbmRleFNlcnZpY2UuYWZ0ZXIgPSBmdW5jdGlvbiAoKSB7XG4gICAgICAgICAgICBfaW5kZXhTZXJ2aWNlLnRhZyhmdW5jdGlvbiAocmVzKSB7IGNvbnNvbGUubG9nKHJlcyk7IH0sIHRhZyk7XG4gICAgICAgIH07XG4gICAgfVxuICAgIFRhZ0NvbXBvbmVudC5wcm90b3R5cGUubmdPbkluaXQgPSBmdW5jdGlvbiAoKSB7IH07XG4gICAgVGFnQ29tcG9uZW50ID0gX19kZWNvcmF0ZShbXG4gICAgICAgIGNvcmVfMS5Db21wb25lbnQoe1xuICAgICAgICAgICAgbW9kdWxlSWQ6IG1vZHVsZS5pZCxcbiAgICAgICAgICAgIHNlbGVjdG9yOiAndGFiJyxcbiAgICAgICAgICAgIHRlbXBsYXRlVXJsOiAnZGlzdC9hcHAvdmlld3MvdGFnLmNvbXBvbmVudC5odG1sJyxcbiAgICAgICAgICAgIHByb3ZpZGVyczogW2luZGV4X3NlcnZpY2VfMS5JbmRleFNlcnZpY2UsIGh0dHBfMS5IVFRQX1BST1ZJREVSU11cbiAgICAgICAgfSksIFxuICAgICAgICBfX21ldGFkYXRhKCdkZXNpZ246cGFyYW10eXBlcycsIFtyb3V0ZXJfMS5BY3RpdmF0ZWRSb3V0ZSwgaW5kZXhfc2VydmljZV8xLkluZGV4U2VydmljZSwgbWV0YV9zZXJ2aWNlXzEuTWV0YVNlcnZpY2VdKVxuICAgIF0sIFRhZ0NvbXBvbmVudCk7XG4gICAgcmV0dXJuIFRhZ0NvbXBvbmVudDtcbn0oKSk7XG5leHBvcnRzLlRhZ0NvbXBvbmVudCA9IFRhZ0NvbXBvbmVudDtcbiJdLCJzb3VyY2VSb290IjoiL3NvdXJjZS8ifQ==
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var router_1 = require('@angular/router');
+var core_1 = require('@angular/core');
+var http_1 = require('@angular/http');
+var angular2_moment_1 = require('angular2-moment');
+var index_service_1 = require('../services/index.service');
+var meta_service_1 = require('../services/meta.service');
+var label_service_1 = require('../services/label.service');
+var TagComponent = (function () {
+    function TagComponent(_router, _route, _indexService, _metaService, _labelService) {
+        this._router = _router;
+        this._route = _route;
+        this._indexService = _indexService;
+        this._metaService = _metaService;
+        this._labelService = _labelService;
+        this.posts = [];
+        this.tag = "";
+        this.tag = this._route.snapshot.params["tag"];
+        _metaService.setData({ title: this.tag, url: "/tag/" + this.tag });
+    }
+    TagComponent.prototype.actionNavigate = function (post) {
+        this._router.navigate(['/' + post.label + "/" + post.path]);
+    };
+    TagComponent.prototype.labelnize = function (label, uppercase) {
+        console.log(label);
+        return this._labelService.labelnize(label, uppercase);
+    };
+    TagComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this._indexService.fetch()
+            .map(function (res) { return res.json(); })
+            .subscribe(function (res) {
+            _this.posts = _this._indexService.filterObs(res, _this.tag, ["tags"], false);
+        });
+    };
+    TagComponent = __decorate([
+        core_1.Component({
+            moduleId: module.id,
+            selector: 'tab',
+            templateUrl: '/dist/app/views/tag.component.html',
+            directives: [
+                router_1.ROUTER_DIRECTIVES
+            ],
+            providers: [
+                index_service_1.IndexService,
+                http_1.HTTP_PROVIDERS
+            ],
+            pipes: [
+                angular2_moment_1.TimeAgoPipe
+            ]
+        }), 
+        __metadata('design:paramtypes', [router_1.Router, router_1.ActivatedRoute, index_service_1.IndexService, meta_service_1.MetaService, label_service_1.LabelService])
+    ], TagComponent);
+    return TagComponent;
+})();
+exports.TagComponent = TagComponent;
+//# sourceMappingURL=tag.component.js.map

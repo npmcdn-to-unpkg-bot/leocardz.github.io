@@ -103,4 +103,4 @@ var AppComponent = (function () {
     return AppComponent;
 })();
 exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+//# sourceMappingURL=base.component.js.map

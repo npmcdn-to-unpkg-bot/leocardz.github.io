@@ -10,7 +10,7 @@ import { Post } from '../models/post';
 @Component({
     moduleId: module.id,
     selector: 'ios',
-    templateUrl: 'dist/app/views/ios.component.html',
+    templateUrl: '/dist/app/views/ios.component.html',
     providers: [IndexService, HTTP_PROVIDERS]
 })
 export class IOSComponent implements OnInit {

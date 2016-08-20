@@ -1,2 +1,7 @@
 .animated.fadeInUp
-    
+    div(*ngFor="let post of posts")
+        a((click)="actionNavigate(post)")
+            .title {{post.title}} &bull; {{labelnize(post.label, true)}}
+            i
+                time {{post.date | amTimeAgo}}
+            .content {{post.content}}

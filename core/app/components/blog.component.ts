@@ -10,7 +10,7 @@ import { Post } from '../models/post';
 @Component({
     moduleId: module.id,
     selector: 'blog',
-    templateUrl: 'dist/app/views/blog.component.html',
+    templateUrl: '/dist/app/views/blog.component.html',
     providers: [IndexService, HTTP_PROVIDERS]
 })
 export class BlogComponent implements OnInit {

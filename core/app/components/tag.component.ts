@@ -1,36 +1,68 @@
-import { ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute, ROUTER_DIRECTIVES } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { HTTP_PROVIDERS } from '@angular/http';
 
+import { TimeAgoPipe } from 'angular2-moment';
+
 import { IndexService } from '../services/index.service';
 import { MetaService } from '../services/meta.service';
+import { LabelService } from '../services/label.service';
 
 import { Post } from '../models/post';
 
 @Component({
     moduleId: module.id,
     selector: 'tab',
-    templateUrl: 'dist/app/views/tag.component.html',
-    providers: [IndexService, HTTP_PROVIDERS]
+    templateUrl: '/dist/app/views/tag.component.html',
+    directives: [
+        ROUTER_DIRECTIVES
+    ],
+    providers: [
+        IndexService,
+        HTTP_PROVIDERS
+    ],
+    pipes: [
+        TimeAgoPipe
+    ]
 })
 export class TagComponent implements OnInit {
 
-    constructor(private _route: ActivatedRoute, private _indexService: IndexService, private _metaService: MetaService) {
+    posts: Post[] = [];
+    tag: string = "";
 
-        const tag = this._route.snapshot.params["tag"];
+    constructor(
+        private _router: Router,
+        private _route: ActivatedRoute,
+        private _indexService: IndexService,
+        private _metaService: MetaService,
+        private _labelService: LabelService) {
 
-        _metaService.setData({ title: tag, url: "/tag/" + tag });
-
-        _indexService.after = function () {
-
-            _indexService.tag(function (res: Post[]) { console.log(res); }, tag);
-
-        };
-
+        this.tag = this._route.snapshot.params["tag"];
+        _metaService.setData({ title: this.tag, url: "/tag/" + this.tag });
 
     }
 
-    ngOnInit() { }
+    actionNavigate(post: Post) {
 
+        this._router.navigate(['/' + post.label + "/" + post.path]);
+
+    }
+
+    labelnize(label: string, uppercase: boolean) {
+
+        console.log(label);
+        return this._labelService.labelnize(label, uppercase);
+
+    }
+
+    ngOnInit() {
+
+        this._indexService.fetch()
+            .map(res => res.json())
+            .subscribe((res: Post[]) => {
+                this.posts = this._indexService.filterObs(res, this.tag, ["tags"], false);
+            });
+
+    }
 
 }

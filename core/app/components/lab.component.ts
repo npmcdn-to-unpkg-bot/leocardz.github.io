@@ -10,7 +10,7 @@ import { Post } from '../models/post';
 @Component({
     moduleId: module.id,
     selector: 'lab',
-    templateUrl: 'dist/app/views/lab.component.html',
+    templateUrl: '/dist/app/views/lab.component.html',
     providers: [IndexService, HTTP_PROVIDERS]
 })
 export class LabComponent implements OnInit {

@@ -5,7 +5,7 @@ import { MetaService } from '../services/meta.service';
 @Component({
     moduleId: module.id,
     selector: 'not-found',
-    templateUrl: 'dist/app/views/not.found.component.html'
+    templateUrl: '/dist/app/views/not.found.component.html'
 })
 export class NotFoundComponent implements OnInit {
 

@@ -1,1 +1,1 @@
-<div class="animated fadeInUp"></div>
+<div class="animated fadeInUp"><div *ngFor="let post of posts"><a (click)="actionNavigate(post)"><div class="title">{{post.title}} &bull; {{labelnize(post.label, true)}}</div><i><time>{{post.date | amTimeAgo}}</time></i><div class="content">{{post.content}}</div></a></div></div>

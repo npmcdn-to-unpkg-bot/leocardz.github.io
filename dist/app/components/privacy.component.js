@@ -1,2 +1,30 @@
-"use strict";var __decorate=this&&this.__decorate||function(e,t,r,a){var c,o=arguments.length,i=o<3?t:null===a?a=Object.getOwnPropertyDescriptor(t,r):a;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)i=Reflect.decorate(e,t,r,a);else for(var n=e.length-1;n>=0;n--)(c=e[n])&&(i=(o<3?c(i):o>3?c(t,r,i):c(t,r))||i);return o>3&&i&&Object.defineProperty(t,r,i),i},__metadata=this&&this.__metadata||function(e,t){if("object"==typeof Reflect&&"function"==typeof Reflect.metadata)return Reflect.metadata(e,t)},core_1=require("@angular/core"),meta_service_1=require("../services/meta.service"),PrivacyComponent=function(){function e(e){this._metaService=e,e.setData({title:"Privacy",url:"/privacy"})}return e.prototype.ngOnInit=function(){},e=__decorate([core_1.Component({moduleId:module.id,selector:"privay",templateUrl:"dist/app/views/privacy.component.html"}),__metadata("design:paramtypes",[meta_service_1.MetaService])],e)}();exports.PrivacyComponent=PrivacyComponent;
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImNvbXBvbmVudHMvcHJpdmFjeS5jb21wb25lbnQuanMiXSwibmFtZXMiOlsiX19kZWNvcmF0ZSIsInRoaXMiLCJkZWNvcmF0b3JzIiwidGFyZ2V0Iiwia2V5IiwiZGVzYyIsImQiLCJjIiwiYXJndW1lbnRzIiwibGVuZ3RoIiwiciIsIk9iamVjdCIsImdldE93blByb3BlcnR5RGVzY3JpcHRvciIsIlJlZmxlY3QiLCJkZWNvcmF0ZSIsImkiLCJkZWZpbmVQcm9wZXJ0eSIsIl9fbWV0YWRhdGEiLCJrIiwidiIsIm1ldGFkYXRhIiwiY29yZV8xIiwicmVxdWlyZSIsIm1ldGFfc2VydmljZV8xIiwiUHJpdmFjeUNvbXBvbmVudCIsIl9tZXRhU2VydmljZSIsInNldERhdGEiLCJ0aXRsZSIsInVybCIsInByb3RvdHlwZSIsIm5nT25Jbml0IiwiQ29tcG9uZW50IiwibW9kdWxlSWQiLCJtb2R1bGUiLCJpZCIsInNlbGVjdG9yIiwidGVtcGxhdGVVcmwiLCJNZXRhU2VydmljZSIsImV4cG9ydHMiXSwibWFwcGluZ3MiOiJBQUFBLFlBQ0EsSUFBSUEsWUFBY0MsTUFBUUEsS0FBS0QsWUFBZSxTQUFVRSxFQUFZQyxFQUFRQyxFQUFLQyxHQUM3RSxHQUEySEMsR0FBdkhDLEVBQUlDLFVBQVVDLE9BQVFDLEVBQUlILEVBQUksRUFBSUosRUFBa0IsT0FBVEUsRUFBZ0JBLEVBQU9NLE9BQU9DLHlCQUF5QlQsRUFBUUMsR0FBT0MsQ0FDckgsSUFBdUIsZ0JBQVpRLFVBQW9ELGtCQUFyQkEsU0FBUUMsU0FBeUJKLEVBQUlHLFFBQVFDLFNBQVNaLEVBQVlDLEVBQVFDLEVBQUtDLE9BQ3BILEtBQUssR0FBSVUsR0FBSWIsRUFBV08sT0FBUyxFQUFHTSxHQUFLLEVBQUdBLEtBQVNULEVBQUlKLEVBQVdhLE1BQUlMLEdBQUtILEVBQUksRUFBSUQsRUFBRUksR0FBS0gsRUFBSSxFQUFJRCxFQUFFSCxFQUFRQyxFQUFLTSxHQUFLSixFQUFFSCxFQUFRQyxLQUFTTSxFQUNoSixPQUFPSCxHQUFJLEdBQUtHLEdBQUtDLE9BQU9LLGVBQWViLEVBQVFDLEVBQUtNLEdBQUlBLEdBRTVETyxXQUFjaEIsTUFBUUEsS0FBS2dCLFlBQWUsU0FBVUMsRUFBR0MsR0FDdkQsR0FBdUIsZ0JBQVpOLFVBQW9ELGtCQUFyQkEsU0FBUU8sU0FBeUIsTUFBT1AsU0FBUU8sU0FBU0YsRUFBR0MsSUFFdEdFLE9BQVNDLFFBQVEsaUJBQ2pCQyxlQUFpQkQsUUFBUSw0QkFDekJFLGlCQUFvQixXQUNwQixRQUFTQSxHQUFpQkMsR0FDdEJ4QixLQUFLd0IsYUFBZUEsRUFDcEJBLEVBQWFDLFNBQVVDLE1BQU8sVUFBV0MsSUFBSyxhQVlsRCxNQVZBSixHQUFpQkssVUFBVUMsU0FBVyxhQUV0Q04sRUFBbUJ4QixZQUNmcUIsT0FBT1UsV0FDSEMsU0FBVUMsT0FBT0MsR0FDakJDLFNBQVUsU0FDVkMsWUFBYSwwQ0FFakJuQixXQUFXLHFCQUFzQk0sZUFBZWMsZUFDakRiLEtBR1BjLFNBQVFkLGlCQUFtQkEiLCJmaWxlIjoiY29tcG9uZW50cy9wcml2YWN5LmNvbXBvbmVudC5qcyIsInNvdXJjZXNDb250ZW50IjpbIlwidXNlIHN0cmljdFwiO1xudmFyIF9fZGVjb3JhdGUgPSAodGhpcyAmJiB0aGlzLl9fZGVjb3JhdGUpIHx8IGZ1bmN0aW9uIChkZWNvcmF0b3JzLCB0YXJnZXQsIGtleSwgZGVzYykge1xuICAgIHZhciBjID0gYXJndW1lbnRzLmxlbmd0aCwgciA9IGMgPCAzID8gdGFyZ2V0IDogZGVzYyA9PT0gbnVsbCA/IGRlc2MgPSBPYmplY3QuZ2V0T3duUHJvcGVydHlEZXNjcmlwdG9yKHRhcmdldCwga2V5KSA6IGRlc2MsIGQ7XG4gICAgaWYgKHR5cGVvZiBSZWZsZWN0ID09PSBcIm9iamVjdFwiICYmIHR5cGVvZiBSZWZsZWN0LmRlY29yYXRlID09PSBcImZ1bmN0aW9uXCIpIHIgPSBSZWZsZWN0LmRlY29yYXRlKGRlY29yYXRvcnMsIHRhcmdldCwga2V5LCBkZXNjKTtcbiAgICBlbHNlIGZvciAodmFyIGkgPSBkZWNvcmF0b3JzLmxlbmd0aCAtIDE7IGkgPj0gMDsgaS0tKSBpZiAoZCA9IGRlY29yYXRvcnNbaV0pIHIgPSAoYyA8IDMgPyBkKHIpIDogYyA+IDMgPyBkKHRhcmdldCwga2V5LCByKSA6IGQodGFyZ2V0LCBrZXkpKSB8fCByO1xuICAgIHJldHVybiBjID4gMyAmJiByICYmIE9iamVjdC5kZWZpbmVQcm9wZXJ0eSh0YXJnZXQsIGtleSwgciksIHI7XG59O1xudmFyIF9fbWV0YWRhdGEgPSAodGhpcyAmJiB0aGlzLl9fbWV0YWRhdGEpIHx8IGZ1bmN0aW9uIChrLCB2KSB7XG4gICAgaWYgKHR5cGVvZiBSZWZsZWN0ID09PSBcIm9iamVjdFwiICYmIHR5cGVvZiBSZWZsZWN0Lm1ldGFkYXRhID09PSBcImZ1bmN0aW9uXCIpIHJldHVybiBSZWZsZWN0Lm1ldGFkYXRhKGssIHYpO1xufTtcbnZhciBjb3JlXzEgPSByZXF1aXJlKCdAYW5ndWxhci9jb3JlJyk7XG52YXIgbWV0YV9zZXJ2aWNlXzEgPSByZXF1aXJlKCcuLi9zZXJ2aWNlcy9tZXRhLnNlcnZpY2UnKTtcbnZhciBQcml2YWN5Q29tcG9uZW50ID0gKGZ1bmN0aW9uICgpIHtcbiAgICBmdW5jdGlvbiBQcml2YWN5Q29tcG9uZW50KF9tZXRhU2VydmljZSkge1xuICAgICAgICB0aGlzLl9tZXRhU2VydmljZSA9IF9tZXRhU2VydmljZTtcbiAgICAgICAgX21ldGFTZXJ2aWNlLnNldERhdGEoeyB0aXRsZTogXCJQcml2YWN5XCIsIHVybDogXCIvcHJpdmFjeVwiIH0pO1xuICAgIH1cbiAgICBQcml2YWN5Q29tcG9uZW50LnByb3RvdHlwZS5uZ09uSW5pdCA9IGZ1bmN0aW9uICgpIHtcbiAgICB9O1xuICAgIFByaXZhY3lDb21wb25lbnQgPSBfX2RlY29yYXRlKFtcbiAgICAgICAgY29yZV8xLkNvbXBvbmVudCh7XG4gICAgICAgICAgICBtb2R1bGVJZDogbW9kdWxlLmlkLFxuICAgICAgICAgICAgc2VsZWN0b3I6ICdwcml2YXknLFxuICAgICAgICAgICAgdGVtcGxhdGVVcmw6ICdkaXN0L2FwcC92aWV3cy9wcml2YWN5LmNvbXBvbmVudC5odG1sJ1xuICAgICAgICB9KSwgXG4gICAgICAgIF9fbWV0YWRhdGEoJ2Rlc2lnbjpwYXJhbXR5cGVzJywgW21ldGFfc2VydmljZV8xLk1ldGFTZXJ2aWNlXSlcbiAgICBdLCBQcml2YWN5Q29tcG9uZW50KTtcbiAgICByZXR1cm4gUHJpdmFjeUNvbXBvbmVudDtcbn0oKSk7XG5leHBvcnRzLlByaXZhY3lDb21wb25lbnQgPSBQcml2YWN5Q29tcG9uZW50O1xuIl0sInNvdXJjZVJvb3QiOiIvc291cmNlLyJ9
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var core_1 = require('@angular/core');
+var meta_service_1 = require('../services/meta.service');
+var PrivacyComponent = (function () {
+    function PrivacyComponent(_metaService) {
+        this._metaService = _metaService;
+        _metaService.setData({ title: "Privacy", url: "/privacy" });
+    }
+    PrivacyComponent.prototype.ngOnInit = function () {
+    };
+    PrivacyComponent = __decorate([
+        core_1.Component({
+            moduleId: module.id,
+            selector: 'privay',
+            templateUrl: '/dist/app/views/privacy.component.html'
+        }), 
+        __metadata('design:paramtypes', [meta_service_1.MetaService])
+    ], PrivacyComponent);
+    return PrivacyComponent;
+})();
+exports.PrivacyComponent = PrivacyComponent;
+//# sourceMappingURL=privacy.component.js.map

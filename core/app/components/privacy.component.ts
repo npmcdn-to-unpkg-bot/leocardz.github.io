@@ -5,7 +5,7 @@ import { MetaService } from '../services/meta.service';
 @Component({
     moduleId: module.id,
     selector: 'privay',
-    templateUrl: 'dist/app/views/privacy.component.html'
+    templateUrl: '/dist/app/views/privacy.component.html'
 })
 export class PrivacyComponent implements OnInit {
 

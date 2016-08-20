@@ -28,7 +28,7 @@ import { Post } from '../models/post';
 @Component({
     moduleId: module.id,
     selector: 'app',
-    templateUrl: 'dist/app/views/app.component.html',
+    templateUrl: '/dist/app/views/app.component.html',
     directives: [
         ROUTER_DIRECTIVES
     ],

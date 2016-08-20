@@ -10,7 +10,7 @@ import { Post } from '../models/post';
 @Component({
     moduleId: module.id,
     selector: 'android',
-    templateUrl: 'dist/app/views/android.component.html',
+    templateUrl: '/dist/app/views/android.component.html',
     providers: [IndexService, HTTP_PROVIDERS]
 })
 export class AndroidComponent implements OnInit {

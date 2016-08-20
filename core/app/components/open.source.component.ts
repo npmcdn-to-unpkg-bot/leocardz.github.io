@@ -7,7 +7,7 @@ import { MetaService } from '../services/meta.service';
 @Component({
     moduleId: module.id,
     selector: 'open-source',
-    templateUrl: 'dist/app/views/open.source.component.html',
+    templateUrl: '/dist/app/views/open.source.component.html',
     providers: [
         GitHubService,
         HTTP_PROVIDERS

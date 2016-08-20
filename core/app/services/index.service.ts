@@ -18,7 +18,7 @@ export class IndexService {
         this._http.get('indexes/full.json')
             .map((res: Response) => res.json())
             .subscribe(res => {
-                this.fullData = res
+                this.fullData = res;
                 this.after();
             });
 
@@ -68,6 +68,26 @@ export class IndexService {
             this._http.get(section + '/' + path + "/content.json").map(res => res.json()),
             this._http.get(section + '/' + path + "/CONTENT.md")
         );
+
+    }
+
+    /////////////////////
+
+    fetch(): Observable<Response> {
+
+        return this._http.get('indexes/full.json');
+
+    }
+
+    filterObs(fullData: Post[], needle: string = "", fields: string[], hightlight: boolean = true): any {
+
+        if (needle === "") {
+            return [];
+        } else if (needle === "home") {
+            return fullData;
+        } else {
+            return this._searchService.perform(fullData, needle, fields, hightlight);
+        }
 
     }
 
