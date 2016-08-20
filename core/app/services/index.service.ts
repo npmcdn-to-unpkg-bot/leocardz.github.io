@@ -49,6 +49,23 @@ export class IndexService {
 
     }
 
+    simplify(fullData: Post[]): Post[] {
+
+        var results: Post[] = [];
+
+        fullData.forEach(element => {
+
+            var result: Post = Object.assign({}, element);
+            result.content = this._searchService.shortify(result.content) + "...";
+
+            results.push(result);
+
+        });
+
+        return results;
+
+    }
+
 
 
 }

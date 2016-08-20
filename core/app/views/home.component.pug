@@ -1,5 +1,8 @@
 .animated.fadeInUp
-    h1 Hallo! 🖖🏽
-    p You've reached leocardz.com! But here there are only  🤖  robots at work🔨. <br />
-        | Come back in a few days. Meanwhile you can visit my&nbsp;
-        a(href="https://github.com/LeonardoCardoso") GitHub profile.
+    include universal
+    div(*ngFor="let post of posts")
+        a((click)="actionNavigate(post)")
+            .title {{post.title}} &bull; {{labelnize(post.label, true)}}
+            i
+                time {{post.date | amTimeAgo}}
+            .content {{post.content}}

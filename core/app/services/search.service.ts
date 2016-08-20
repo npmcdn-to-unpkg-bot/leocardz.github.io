@@ -82,18 +82,26 @@ export class SearchService {
         const boldNeedle = "**" + needle.toLowerCase() + "**";
         const boldNeedleIndex = needle === "*" ? 0 : contentReplic.indexOf(boldNeedle);
 
-        const start = boldNeedleIndex < offset ? 0 : boldNeedleIndex - offset;
-        const needleEnd = boldNeedleIndex + boldNeedle.length;
-        const end = needleEnd > result.content.length - (offset + 1) ? result.content.length : (needleEnd + offset);
+        const shortContent = this.shortify(result.content, boldNeedleIndex, boldNeedle)
 
-        const shortContent = result.content.substring(start, end);
+        result.content = "..." + shortContent + "...";
+
+        return result;
+
+    }
+
+    shortify(s: string, startIndex: number = 0, boldNeedle: string = "", offset: number = 200): string {
+
+        const start = startIndex < offset ? 0 : startIndex - offset;
+        const needleEnd = startIndex + boldNeedle.length;
+        const end = needleEnd > s.length - (offset + 1) ? s.length : (needleEnd + offset);
+
+        const shortContent = s.substring(start, end);
 
         const firstSpaceIndex = shortContent.indexOf(" ") + 1;
         const lastSpaceIndex = shortContent.lastIndexOf(" ");
 
-        result.content = "..." + shortContent.substring(firstSpaceIndex, lastSpaceIndex) + "...";
-
-        return result;
+        return shortContent.substring(firstSpaceIndex, lastSpaceIndex);
 
     }
 

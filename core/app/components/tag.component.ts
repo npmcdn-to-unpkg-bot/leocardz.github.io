@@ -19,6 +19,7 @@ import { Post } from '../models/post';
     ],
     providers: [
         IndexService,
+        LabelService,
         HTTP_PROVIDERS
     ],
     pipes: [
@@ -42,25 +43,18 @@ export class TagComponent implements OnInit {
 
     }
 
-    actionNavigate(post: Post) {
+    actionNavigate(post: Post) { this._router.navigate(['/' + post.label + "/" + post.path]); }
 
-        this._router.navigate(['/' + post.label + "/" + post.path]);
-
-    }
-
-    labelnize(label: string, uppercase: boolean) {
-
-        console.log(label);
-        return this._labelService.labelnize(label, uppercase);
-
-    }
+    labelnize(label: string, uppercase: boolean) { return this._labelService.labelnize(label, uppercase); }
 
     ngOnInit() {
 
         this._indexService.fetch()
             .map(res => res.json())
             .subscribe((res: Post[]) => {
-                this.posts = this._indexService.search(res, this.tag, ["tags"], false);
+
+                this.posts = this._indexService.simplify(this._indexService.search(res, this.tag, ["tags"], false));
+
             });
 
     }

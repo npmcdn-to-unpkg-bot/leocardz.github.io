@@ -1,2 +1,8 @@
 .animated.fadeInUp
-    p="🗞"
+    include universal
+    div(*ngFor="let post of posts")
+        a((click)="actionNavigate(post)")
+            .title {{post.title}}
+            i
+                time {{post.date | amTimeAgo}}
+            .content {{post.content}}

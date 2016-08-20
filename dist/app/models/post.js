@@ -1,7 +1,2 @@
-var Post = (function () {
-    function Post() {
-    }
-    return Post;
-})();
-exports.Post = Post;
-//# sourceMappingURL=post.js.map
+"use strict";var Post=function(){function t(){}return t}();exports.Post=Post;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIm1vZGVscy9wb3N0LmpzIl0sIm5hbWVzIjpbIlBvc3QiLCJleHBvcnRzIl0sIm1hcHBpbmdzIjoiQUFBQSxZQUNBLElBQUlBLE1BQVEsV0FDUixRQUFTQSxNQUVULE1BQU9BLEtBRVhDLFNBQVFELEtBQU9BIiwiZmlsZSI6Im1vZGVscy9wb3N0LmpzIiwic291cmNlc0NvbnRlbnQiOlsiXCJ1c2Ugc3RyaWN0XCI7XG52YXIgUG9zdCA9IChmdW5jdGlvbiAoKSB7XG4gICAgZnVuY3Rpb24gUG9zdCgpIHtcbiAgICB9XG4gICAgcmV0dXJuIFBvc3Q7XG59KCkpO1xuZXhwb3J0cy5Qb3N0ID0gUG9zdDtcbiJdLCJzb3VyY2VSb290IjoiL3NvdXJjZS8ifQ==

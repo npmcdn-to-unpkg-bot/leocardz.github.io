@@ -1,6 +1,8 @@
-import { Router, ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute, ROUTER_DIRECTIVES } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { HTTP_PROVIDERS } from '@angular/http';
+
+import { TimeAgoPipe } from 'angular2-moment';
 
 import { IndexService } from '../services/index.service';
 import { MetaService } from '../services/meta.service';
@@ -11,13 +13,23 @@ import { Post } from '../models/post';
     moduleId: module.id,
     selector: 'ios',
     templateUrl: '/dist/app/views/ios.component.html',
-    providers: [IndexService, HTTP_PROVIDERS]
+    directives: [
+        ROUTER_DIRECTIVES
+    ],
+    providers: [
+        IndexService,
+        HTTP_PROVIDERS
+    ],
+    pipes: [
+        TimeAgoPipe
+    ]
 })
 export class IOSComponent implements OnInit {
 
     params: Object = {}
     title: string = "iOS";
     label: string = "ios";
+    posts: Post[] = [];
 
     constructor(
         private _metaService: MetaService,
@@ -29,6 +41,8 @@ export class IOSComponent implements OnInit {
         this.params = this._route.snapshot.params;
 
     }
+
+    actionNavigate(post: Post) { this._router.navigate(['/' + post.label + "/" + post.path]); }
 
     ngOnInit() {
 
@@ -60,8 +74,10 @@ export class IOSComponent implements OnInit {
             this._indexService.fetch()
                 .map(res => res.json())
                 .subscribe((res: Post[]) => {
-                    console.log(this._indexService.search(res, this.label, ["label"], false));
-                });
+
+                    this.posts = this._indexService.search(res, this.label, ["label"], false);
+                
+            });
 
         }
 
